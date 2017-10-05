@@ -13,7 +13,7 @@ import java.sql.*;
  */
 public class Item 
 {
-    Integer id, cantidadTotal, cantidadNinos, cantidadAdultos, precioTotal; 
+    Integer id, cantidadInfantes, cantidadNinos, cantidadAdultos, precioTotal; 
     String nombreTour; 
     Date fecha; 
     Time hora;
@@ -28,11 +28,11 @@ public class Item
     } 
     public void setCantidad(Integer cantidadTotal) 
     {
-        this.cantidadTotal = cantidadTotal; 
+        this.cantidadInfantes = cantidadTotal; 
     } 
     public Integer getCantidad() 
     {
-        return this.cantidadTotal;
+        return this.cantidadInfantes;
     }
     public void setNinos(Integer ninos) 
     {
