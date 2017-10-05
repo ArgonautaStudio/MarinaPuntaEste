@@ -133,7 +133,7 @@ public class Windows extends javax.swing.JFrame {
 
         btn_cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Cerrar_1_Normal.png"))); // NOI18N
         btn_cerrar.setContentAreaFilled(false);
-        btn_cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cerrarActionPerformed(evt);
@@ -141,7 +141,7 @@ public class Windows extends javax.swing.JFrame {
         });
         panel_drag.add(btn_cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1550, 0, 50, 40));
 
-        Drager.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        Drager.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Drager.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 DragerMouseDragged(evt);
@@ -178,7 +178,7 @@ public class Windows extends javax.swing.JFrame {
         btn_terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_TC_Static.png"))); // NOI18N
         btn_terminos.setBorderPainted(false);
         btn_terminos.setContentAreaFilled(false);
-        btn_terminos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_terminos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_terminos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_terminosMouseEntered(evt);
@@ -197,7 +197,7 @@ public class Windows extends javax.swing.JFrame {
         btn_cancelaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Cancel_Static.png"))); // NOI18N
         btn_cancelaciones.setBorderPainted(false);
         btn_cancelaciones.setContentAreaFilled(false);
-        btn_cancelaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_cancelaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_cancelaciones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_cancelacionesMouseEntered(evt);
@@ -216,7 +216,7 @@ public class Windows extends javax.swing.JFrame {
         btn_book.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Book_Static.png"))); // NOI18N
         btn_book.setBorderPainted(false);
         btn_book.setContentAreaFilled(false);
-        btn_book.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_book.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_book.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_bookMouseEntered(evt);
@@ -274,7 +274,7 @@ public class Windows extends javax.swing.JFrame {
         btn_cancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Cancelar.jpg"))); // NOI18N
         btn_cancelar1.setBorderPainted(false);
         btn_cancelar1.setContentAreaFilled(false);
-        btn_cancelar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_cancelar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_cancelar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelar1ActionPerformed(evt);
@@ -285,7 +285,7 @@ public class Windows extends javax.swing.JFrame {
         btn_siguiente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Siguiente.jpg"))); // NOI18N
         btn_siguiente1.setBorderPainted(false);
         btn_siguiente1.setContentAreaFilled(false);
-        btn_siguiente1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_siguiente1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_siguiente1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_siguiente1ActionPerformed(evt);
@@ -326,7 +326,7 @@ public class Windows extends javax.swing.JFrame {
         btn_jungle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/A_Jungle_02.jpg"))); // NOI18N
         btn_jungle.setBorderPainted(false);
         btn_jungle.setContentAreaFilled(false);
-        btn_jungle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_jungle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_jungle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_jungleActionPerformed(evt);
@@ -337,7 +337,7 @@ public class Windows extends javax.swing.JFrame {
         btn_mangrove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/A_Mangrove_02.jpg"))); // NOI18N
         btn_mangrove.setBorderPainted(false);
         btn_mangrove.setContentAreaFilled(false);
-        btn_mangrove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_mangrove.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_mangrove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_mangroveActionPerformed(evt);
@@ -348,7 +348,7 @@ public class Windows extends javax.swing.JFrame {
         btn_scuba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/A_Scuba_03.jpg"))); // NOI18N
         btn_scuba.setBorderPainted(false);
         btn_scuba.setContentAreaFilled(false);
-        btn_scuba.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_scuba.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_scuba.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_scubaActionPerformed(evt);
@@ -359,7 +359,7 @@ public class Windows extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/A_Box_ComingSoon.png"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -370,7 +370,7 @@ public class Windows extends javax.swing.JFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/A_Box_ComingSoon.png"))); // NOI18N
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -457,19 +457,19 @@ public class Windows extends javax.swing.JFrame {
         btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Cancelar.jpg"))); // NOI18N
         btn_cancelar.setBorderPainted(false);
         btn_cancelar.setContentAreaFilled(false);
-        btn_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panel_bookOpciones.add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 670, 100, 50));
 
         btn_siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Siguiente.jpg"))); // NOI18N
         btn_siguiente.setBorderPainted(false);
         btn_siguiente.setContentAreaFilled(false);
-        btn_siguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_siguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panel_bookOpciones.add(btn_siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 670, 100, 50));
 
         btn_mx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_btn_mx_select.png"))); // NOI18N
         btn_mx.setBorderPainted(false);
         btn_mx.setContentAreaFilled(false);
-        btn_mx.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_mx.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_mx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_mxActionPerformed(evt);
@@ -480,7 +480,7 @@ public class Windows extends javax.swing.JFrame {
         btn_usd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_btn_usd.png"))); // NOI18N
         btn_usd.setBorderPainted(false);
         btn_usd.setContentAreaFilled(false);
-        btn_usd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_usd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_usd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_usdActionPerformed(evt);
@@ -499,7 +499,7 @@ public class Windows extends javax.swing.JFrame {
         panel_bookOpciones.add(moneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 560, -1, -1));
 
         Horario1.setText("10:00 AM");
-        Horario1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Horario1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Horario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Horario1ActionPerformed(evt);
@@ -508,7 +508,7 @@ public class Windows extends javax.swing.JFrame {
         panel_bookOpciones.add(Horario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, -1, -1));
 
         Horario3.setText("16:00 PM");
-        Horario3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Horario3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Horario3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Horario3ActionPerformed(evt);
@@ -517,7 +517,7 @@ public class Windows extends javax.swing.JFrame {
         panel_bookOpciones.add(Horario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 550, -1, 20));
 
         Horario2.setText("12:00 PM");
-        Horario2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Horario2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Horario2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Horario2ActionPerformed(evt);
