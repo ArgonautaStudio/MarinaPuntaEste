@@ -7,6 +7,7 @@ package windows;
 
 import Classes.Prices;
 import Conecction.Conecction;
+import java.sql.Time;
 import java.util.Date;
 import javax.swing.ImageIcon;
 
@@ -16,7 +17,7 @@ import javax.swing.ImageIcon;
  */
 public class Windows extends javax.swing.JFrame {
      int x, y;
-    Date date;
+    String date;
     private Conecction conn;
     int tipo=0;
     Prices prices1;
@@ -24,6 +25,7 @@ public class Windows extends javax.swing.JFrame {
     Prices prices3;
     Prices prices;
     boolean flag=false;
+    String time;
 
     /**
      * Creates new form Windows
@@ -116,7 +118,6 @@ public class Windows extends javax.swing.JFrame {
         separador_nombre4 = new javax.swing.JSeparator();
         separador_nombre5 = new javax.swing.JSeparator();
         panel_bookOpciones = new javax.swing.JPanel();
-        Input_Date = new com.toedter.calendar.JDateChooser();
         BTN_DAy = new javax.swing.JButton();
         input_infante = new javax.swing.JTextField();
         input_nino = new javax.swing.JTextField();
@@ -134,6 +135,7 @@ public class Windows extends javax.swing.JFrame {
         totalPrice = new javax.swing.JLabel();
         precio_infante = new javax.swing.JLabel();
         precio_nino = new javax.swing.JLabel();
+        Input_Date = new com.toedter.calendar.JCalendar();
         precio_adulto = new javax.swing.JLabel();
         fondito6 = new javax.swing.JLabel();
         fondito5 = new javax.swing.JLabel();
@@ -424,6 +426,11 @@ public class Windows extends javax.swing.JFrame {
         btn_regresar.setBorderPainted(false);
         btn_regresar.setContentAreaFilled(false);
         btn_regresar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_regresarActionPerformed(evt);
+            }
+        });
         panel_bookClient.add(btn_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 620, 100, 50));
 
         btn_pagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Pagar.jpg"))); // NOI18N
@@ -513,15 +520,14 @@ public class Windows extends javax.swing.JFrame {
             }
         });
         panel_bookOpciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panel_bookOpciones.add(Input_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 220, 40));
 
-        BTN_DAy.setText("THIS");
+        BTN_DAy.setText("Choose Day");
         BTN_DAy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BTN_DAyActionPerformed(evt);
             }
         });
-        panel_bookOpciones.add(BTN_DAy, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, -1, -1));
+        panel_bookOpciones.add(BTN_DAy, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, -1, -1));
 
         input_infante.setBackground(new java.awt.Color(240, 240, 240));
         input_infante.setFont(new java.awt.Font("Roboto", 0, 55)); // NOI18N
@@ -677,6 +683,10 @@ public class Windows extends javax.swing.JFrame {
         precio_nino.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         precio_nino.setText("$0000");
         panel_bookOpciones.add(precio_nino, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 250, 80, -1));
+
+        Input_Date.setDate(new java.util.Date(1507218632000L));
+        Input_Date.setWeekOfYearVisible(false);
+        panel_bookOpciones.add(Input_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 370, 270));
 
         precio_adulto.setFont(new java.awt.Font("Roboto", 0, 26)); // NOI18N
         precio_adulto.setForeground(new java.awt.Color(255, 255, 255));
@@ -1005,7 +1015,7 @@ public class Windows extends javax.swing.JFrame {
         // TODO add your handling code here:
         tipo=0; 
         ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Cancelar_Active.png"));
-        btn_cancelar.setIcon(nepe);
+        btn_cancelar1.setIcon(nepe);
         this.jButton1.setVisible(true);
         this.jButton2.setVisible(true);
         ImageIcon img = new ImageIcon(getClass().getResource(""));
@@ -1022,7 +1032,7 @@ public class Windows extends javax.swing.JFrame {
     private void btn_siguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_siguiente1ActionPerformed
         // TODO add your handling code here: 
         ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Sig_Active.png"));
-        btn_cancelar.setIcon(nepe);
+        btn_siguiente1.setIcon(nepe);
         panel_bookOpciones.setVisible(true);
         panel_bookActivities.setVisible(false);
         prices = this.conn.getPrices(tipo);
@@ -1099,8 +1109,11 @@ public class Windows extends javax.swing.JFrame {
 
     private void BTN_DAyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_DAyActionPerformed
         // TODO add your handling code here:
-        date= Input_Date.getDate();
-        System.out.println(date.toString());
+        String[] arrayDate = Input_Date.getDate().toLocaleString().split("/");
+        date = arrayDate[1];
+        for (int i = 0; i < arrayDate.length; i++) {
+	System.out.println(arrayDate[i]);
+}
     }//GEN-LAST:event_BTN_DAyActionPerformed
 
     private void btn_mxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mxActionPerformed
@@ -1135,6 +1148,7 @@ public class Windows extends javax.swing.JFrame {
             this.Horario2.setSelected(false);
             this.Horario3.setSelected(false);
         }
+        time="10:00";
     }//GEN-LAST:event_Horario1ActionPerformed
 
     private void Horario3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Horario3ActionPerformed
@@ -1143,6 +1157,7 @@ public class Windows extends javax.swing.JFrame {
             this.Horario1.setSelected(false);
             this.Horario2.setSelected(false);
         }
+        time="16:00";
     }//GEN-LAST:event_Horario3ActionPerformed
 
     private void Horario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Horario2ActionPerformed
@@ -1151,6 +1166,7 @@ public class Windows extends javax.swing.JFrame {
             this.Horario1.setSelected(false);
             this.Horario3.setSelected(false);
         }
+        time="12:00";
     }//GEN-LAST:event_Horario2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1278,9 +1294,9 @@ float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.prec
         // TODO add your handling code here:
         panel_bookOpciones.setVisible(false);
         panel_bookClient.setVisible(true);
-        this.tour_Time.setText("9:00");
-        this.tour_date.setText(date.toLocaleString());
-        this.tour_name.setText("Debe ser nombre"+tipo);
+        this.tour_Time.setText(time);
+        //DATE FORMATO//this.tour_date.setText(date.toLocaleString());
+        this.tour_name.setText(conn.TourName(tipo));
         this.tour_total.setText(this.totalPrice.getText());
         this.tour_adult.setText(this.input_adulto.getText());
         this.tour_child.setText(this.input_nino.getText());
@@ -1324,27 +1340,33 @@ float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.prec
 
     private void btn_cancelar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cancelar1MouseEntered
         // TODO add your handling code here: 
-        ImageIcon img =  new ImageIcon(getClass().getResource("/img/Btn_Cancelar_Hover.jpg"));
-        this.btn_cancelar.setIcon(img);
+        ImageIcon img =  new ImageIcon(getClass().getResource("/img/Btn_Cancelar_Hover.png"));
+        this.btn_cancelar1.setIcon(img);
     }//GEN-LAST:event_btn_cancelar1MouseEntered
 
     private void btn_cancelar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cancelar1MouseExited
         // TODO add your handling code here: 
-        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Cancelar_Static.png"));
-        btn_cancelar.setIcon(nepe);
+        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/btn_Cancelar.jpg"));
+        btn_cancelar1.setIcon(nepe);
     }//GEN-LAST:event_btn_cancelar1MouseExited
 
     private void btn_siguiente1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_siguiente1MouseEntered
         // TODO add your handling code here: 
         ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Sig_Hover.png"));
-        btn_cancelar.setIcon(nepe);
+        btn_siguiente1.setIcon(nepe);
     }//GEN-LAST:event_btn_siguiente1MouseEntered
 
     private void btn_siguiente1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_siguiente1MouseExited
         // TODO add your handling code here: 
-        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Sig_Static.png"));
-        btn_cancelar.setIcon(nepe);
+        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/btn_Siguiente.jpg"));
+        btn_siguiente1.setIcon(nepe);
     }//GEN-LAST:event_btn_siguiente1MouseExited
+
+    private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
+        // TODO add your handling code here
+        panel_bookOpciones.setVisible(true);
+        panel_bookClient.setVisible(false);
+    }//GEN-LAST:event_btn_regresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1389,7 +1411,7 @@ float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.prec
     private javax.swing.JRadioButton Horario1;
     private javax.swing.JRadioButton Horario2;
     private javax.swing.JRadioButton Horario3;
-    private com.toedter.calendar.JDateChooser Input_Date;
+    private com.toedter.calendar.JCalendar Input_Date;
     private javax.swing.JLabel adult_price;
     private javax.swing.JLabel banner;
     private javax.swing.JLabel box;
