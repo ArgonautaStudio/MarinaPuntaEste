@@ -779,6 +779,14 @@ public class Windows extends javax.swing.JFrame {
         btn_cancelar1.setBorderPainted(false);
         btn_cancelar1.setContentAreaFilled(false);
         btn_cancelar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_cancelar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cancelar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_cancelar1MouseExited(evt);
+            }
+        });
         btn_cancelar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelar1ActionPerformed(evt);
@@ -790,6 +798,14 @@ public class Windows extends javax.swing.JFrame {
         btn_siguiente1.setBorderPainted(false);
         btn_siguiente1.setContentAreaFilled(false);
         btn_siguiente1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_siguiente1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_siguiente1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_siguiente1MouseExited(evt);
+            }
+        });
         btn_siguiente1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_siguiente1ActionPerformed(evt);
@@ -831,6 +847,14 @@ public class Windows extends javax.swing.JFrame {
         btn_jungle.setBorderPainted(false);
         btn_jungle.setContentAreaFilled(false);
         btn_jungle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_jungle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_jungleMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_jungleMouseExited(evt);
+            }
+        });
         btn_jungle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_jungleActionPerformed(evt);
@@ -842,6 +866,14 @@ public class Windows extends javax.swing.JFrame {
         btn_mangrove.setBorderPainted(false);
         btn_mangrove.setContentAreaFilled(false);
         btn_mangrove.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_mangrove.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_mangroveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_mangroveMouseExited(evt);
+            }
+        });
         btn_mangrove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_mangroveActionPerformed(evt);
@@ -853,6 +885,14 @@ public class Windows extends javax.swing.JFrame {
         btn_scuba.setBorderPainted(false);
         btn_scuba.setContentAreaFilled(false);
         btn_scuba.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_scuba.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_scubaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_scubaMouseExited(evt);
+            }
+        });
         btn_scuba.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_scubaActionPerformed(evt);
@@ -963,7 +1003,11 @@ public class Windows extends javax.swing.JFrame {
 
     private void btn_cancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelar1ActionPerformed
         // TODO add your handling code here:
-        tipo=0;
+        tipo=0; 
+        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Cancelar_Active.png"));
+        btn_cancelar.setIcon(nepe);
+        this.jButton1.setVisible(true);
+        this.jButton2.setVisible(true);
         ImageIcon img = new ImageIcon(getClass().getResource(""));
         ImageIcon ban = new ImageIcon(getClass().getResource(""));
         img_tour.setIcon(img);
@@ -976,7 +1020,9 @@ public class Windows extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_cancelar1ActionPerformed
 
     private void btn_siguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_siguiente1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
+        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Sig_Active.png"));
+        btn_cancelar.setIcon(nepe);
         panel_bookOpciones.setVisible(true);
         panel_bookActivities.setVisible(false);
         prices = this.conn.getPrices(tipo);
@@ -989,7 +1035,9 @@ public class Windows extends javax.swing.JFrame {
     private void btn_jungleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jungleActionPerformed
         // TODO add your handling code here 
         ImageIcon nepe =  new ImageIcon(getClass().getResource("/img/Jungle01_Select.jpg")); 
-        this.btn_jungle.setIcon(nepe);
+        this.btn_jungle.setIcon(nepe); 
+        this.jButton1.setVisible(false);
+        this.jButton2.setVisible(false);
         this.panel_Description.setVisible(false);
         tipo = 1;
         this.adult_price.setText("$ "+Float.toString(this.prices1.priceUSadulto));
@@ -1008,13 +1056,17 @@ public class Windows extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_jungleActionPerformed
 
     private void btn_mangroveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mangroveActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
+        ImageIcon nepe =  new ImageIcon(getClass().getResource("/img/Mangroove_Select.jpg")); 
+        this.btn_mangrove.setIcon(nepe); 
+        this.jButton1.setVisible(false);
+        this.jButton2.setVisible(false);
         this.panel_Description.setVisible(false);
         tipo=2;
         this.adult_price.setText("$ "+Float.toString(this.prices2.priceUSadulto));
         this.child_price.setText("$ "+Float.toString(this.prices2.priceUSnino));
         panel_Description.setVisible(true);
-        ImageIcon img = new ImageIcon(getClass().getResource("/img/A_Mangrove_02.jpg"));
+        ImageIcon img = new ImageIcon(getClass().getResource("/img/Mangroove.jpg"));
         ImageIcon ban = new ImageIcon(getClass().getResource("/img/A_BigBar_Green_03.png"));
         img_tour.setIcon(img);
         banner.setIcon(ban);
@@ -1025,13 +1077,17 @@ public class Windows extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_mangroveActionPerformed
 
     private void btn_scubaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_scubaActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
+        ImageIcon nepe =  new ImageIcon(getClass().getResource("/img/Scuba_Select.jpg")); 
+        this.btn_scuba.setIcon(nepe); 
+        this.jButton1.setVisible(false);
+        this.jButton2.setVisible(false);
         this.panel_Description.setVisible(false);
         tipo=3;
         this.adult_price.setText("$ "+Float.toString(this.prices3.priceUSadulto));
         this.child_price.setText("$ "+Float.toString(this.prices3.priceUSnino));
         panel_Description.setVisible(true);
-        ImageIcon img = new ImageIcon(getClass().getResource("/img/A_Scuba_03.jpg"));
+        ImageIcon img = new ImageIcon(getClass().getResource("/img/ScubaDive.jpg"));
         ImageIcon ban = new ImageIcon(getClass().getResource("/img/A_BigBar_Blue_01.png"));
         img_tour.setIcon(img);
         banner.setIcon(ban);
@@ -1229,6 +1285,66 @@ float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.prec
         this.tour_adult.setText(this.input_adulto.getText());
         this.tour_child.setText(this.input_nino.getText());
     }//GEN-LAST:event_btn_siguienteActionPerformed
+
+    private void btn_jungleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_jungleMouseEntered
+        // TODO add your handling code here: 
+        ImageIcon img =  new ImageIcon(getClass().getResource("/img/Jungle01_Hover.jpg"));
+        this.btn_jungle.setIcon(img);
+    }//GEN-LAST:event_btn_jungleMouseEntered
+
+    private void btn_jungleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_jungleMouseExited
+        // TODO add your handling code here: 
+        ImageIcon img =  new ImageIcon(getClass().getResource("/img/Jungle01_Static.jpg"));
+        this.btn_jungle.setIcon(img);
+    }//GEN-LAST:event_btn_jungleMouseExited
+
+    private void btn_mangroveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_mangroveMouseEntered
+        // TODO add your handling code here: 
+        ImageIcon nepe =  new ImageIcon(getClass().getResource("/img/Mangroove_Hover.jpg")); 
+        this.btn_mangrove.setIcon(nepe);
+    }//GEN-LAST:event_btn_mangroveMouseEntered
+
+    private void btn_mangroveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_mangroveMouseExited
+        // TODO add your handling code here:
+        ImageIcon nepe =  new ImageIcon(getClass().getResource("/img/Mangroove_Static.jpg")); 
+        this.btn_mangrove.setIcon(nepe);
+    }//GEN-LAST:event_btn_mangroveMouseExited
+
+    private void btn_scubaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_scubaMouseEntered
+        // TODO add your handling code here: 
+        ImageIcon nepe =  new ImageIcon(getClass().getResource("/img/Scuba_Hover.jpg")); 
+        this.btn_scuba.setIcon(nepe);
+    }//GEN-LAST:event_btn_scubaMouseEntered
+
+    private void btn_scubaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_scubaMouseExited
+        // TODO add your handling code here: 
+        ImageIcon nepe =  new ImageIcon(getClass().getResource("/img/Scuba_Static.jpg")); 
+        this.btn_scuba.setIcon(nepe);
+    }//GEN-LAST:event_btn_scubaMouseExited
+
+    private void btn_cancelar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cancelar1MouseEntered
+        // TODO add your handling code here: 
+        ImageIcon img =  new ImageIcon(getClass().getResource("/img/Btn_Cancelar_Hover.jpg"));
+        this.btn_cancelar.setIcon(img);
+    }//GEN-LAST:event_btn_cancelar1MouseEntered
+
+    private void btn_cancelar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cancelar1MouseExited
+        // TODO add your handling code here: 
+        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Cancelar_Static.png"));
+        btn_cancelar.setIcon(nepe);
+    }//GEN-LAST:event_btn_cancelar1MouseExited
+
+    private void btn_siguiente1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_siguiente1MouseEntered
+        // TODO add your handling code here: 
+        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Sig_Hover.png"));
+        btn_cancelar.setIcon(nepe);
+    }//GEN-LAST:event_btn_siguiente1MouseEntered
+
+    private void btn_siguiente1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_siguiente1MouseExited
+        // TODO add your handling code here: 
+        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Sig_Static.png"));
+        btn_cancelar.setIcon(nepe);
+    }//GEN-LAST:event_btn_siguiente1MouseExited
 
     /**
      * @param args the command line arguments
