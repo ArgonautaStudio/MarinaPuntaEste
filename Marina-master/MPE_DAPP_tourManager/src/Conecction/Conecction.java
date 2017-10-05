@@ -245,4 +245,26 @@ public class Conecction {
             return null;
         }
     }
+
+    public String TourName(int tipo) {
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "SELECT nombre FROM Marina_PDE_DB.tour where idtour = " + tipo;
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               return rs.getString("nombre");
+            }
+            return "";
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return "";
+        }
+    }
 }
