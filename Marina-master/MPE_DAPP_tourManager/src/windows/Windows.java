@@ -182,7 +182,7 @@ public class Windows extends javax.swing.JFrame {
 
         btn_cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Cerrar_1_Normal.png"))); // NOI18N
         btn_cerrar.setContentAreaFilled(false);
-        btn_cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cerrarActionPerformed(evt);
@@ -827,7 +827,7 @@ public class Windows extends javax.swing.JFrame {
 
         panel_bookActivities.add(panel_Description, new org.netbeans.lib.awtextra.AbsoluteConstraints(786, 0, -1, 760));
 
-        btn_jungle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/A_Jungle_02.jpg"))); // NOI18N
+        btn_jungle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Jungle01_Static.jpg"))); // NOI18N
         btn_jungle.setBorderPainted(false);
         btn_jungle.setContentAreaFilled(false);
         btn_jungle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -838,7 +838,7 @@ public class Windows extends javax.swing.JFrame {
         });
         panel_bookActivities.add(btn_jungle, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 370, -1));
 
-        btn_mangrove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/A_Mangrove_02.jpg"))); // NOI18N
+        btn_mangrove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Mangroove_Static.jpg"))); // NOI18N
         btn_mangrove.setBorderPainted(false);
         btn_mangrove.setContentAreaFilled(false);
         btn_mangrove.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -849,7 +849,7 @@ public class Windows extends javax.swing.JFrame {
         });
         panel_bookActivities.add(btn_mangrove, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 370, -1));
 
-        btn_scuba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/A_Scuba_03.jpg"))); // NOI18N
+        btn_scuba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Scuba_Static.jpg"))); // NOI18N
         btn_scuba.setBorderPainted(false);
         btn_scuba.setContentAreaFilled(false);
         btn_scuba.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -860,7 +860,7 @@ public class Windows extends javax.swing.JFrame {
         });
         panel_bookActivities.add(btn_scuba, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 370, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/A_Box_ComingSoon.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BoatRental_Static.jpg"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -871,7 +871,7 @@ public class Windows extends javax.swing.JFrame {
         });
         panel_bookActivities.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 240, 370, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/A_Box_ComingSoon.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Aquabus_Static.jpg"))); // NOI18N
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -987,13 +987,15 @@ public class Windows extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_siguiente1ActionPerformed
 
     private void btn_jungleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jungleActionPerformed
-        // TODO add your handling code here
+        // TODO add your handling code here 
+        ImageIcon nepe =  new ImageIcon(getClass().getResource("/img/Jungle01_Select.jpg")); 
+        this.btn_jungle.setIcon(nepe);
         this.panel_Description.setVisible(false);
         tipo = 1;
         this.adult_price.setText("$ "+Float.toString(this.prices1.priceUSadulto));
         this.child_price.setText("$ "+Float.toString(this.prices1.priceUSnino));
         panel_Description.setVisible(true);
-        ImageIcon img = new ImageIcon(getClass().getResource("/img/A_Jungle_02.jpg"));
+        ImageIcon img = new ImageIcon(getClass().getResource("/img/JungleTour.jpg"));
         ImageIcon ban = new ImageIcon(getClass().getResource("/img/A_BigBar_Green_02.png"));
         img_tour.setIcon(img);
         banner.setIcon(ban);
