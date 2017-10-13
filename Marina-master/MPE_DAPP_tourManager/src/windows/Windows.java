@@ -10,14 +10,18 @@ import Conecction.Conecction;
 import java.sql.Time;
 import java.util.Date;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Roman
  */
 public class Windows extends javax.swing.JFrame {
+    //Indica el precio final que pagara el cliente
+    float precioTotal=0;
+    //Variables para seguir la posicion del mouse y reajuste de ventana
      int x, y;
-    String date;
+    String dateDB,date;
     private Conecction conn;
     int tipo=0;
     Prices prices1;
@@ -70,53 +74,6 @@ public class Windows extends javax.swing.JFrame {
         panel_pasos = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         fondo_pasos = new javax.swing.JLabel();
-        panel_opciones = new javax.swing.JPanel();
-        btn_terminos = new javax.swing.JButton();
-        btn_cancelaciones = new javax.swing.JButton();
-        btn_book = new javax.swing.JButton();
-        user_name = new javax.swing.JLabel();
-        guy = new javax.swing.JLabel();
-        icon_guy = new javax.swing.JLabel();
-        box = new javax.swing.JLabel();
-        panel_bookClient = new javax.swing.JPanel();
-        carrito = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        title_carrito = new javax.swing.JLabel();
-        title_tour = new javax.swing.JLabel();
-        title_date = new javax.swing.JLabel();
-        title_adult1 = new javax.swing.JLabel();
-        title_child1 = new javax.swing.JLabel();
-        title_time1 = new javax.swing.JLabel();
-        tour_Time = new javax.swing.JLabel();
-        tour_name = new javax.swing.JLabel();
-        tour_date = new javax.swing.JLabel();
-        tour_adult = new javax.swing.JLabel();
-        tour_child = new javax.swing.JLabel();
-        tour_total = new javax.swing.JLabel();
-        title_informacion = new javax.swing.JLabel();
-        btn_efectivo = new javax.swing.JButton();
-        btn_tarjeta = new javax.swing.JButton();
-        btn_facturacion = new javax.swing.JButton();
-        btn_regresar = new javax.swing.JButton();
-        btn_pagar = new javax.swing.JButton();
-        title_nombre = new javax.swing.JLabel();
-        title_apellido = new javax.swing.JLabel();
-        title_rfc = new javax.swing.JLabel();
-        title_email = new javax.swing.JLabel();
-        title_numero = new javax.swing.JLabel();
-        title_direccion = new javax.swing.JLabel();
-        input_nombre = new javax.swing.JTextField();
-        input_apellido = new javax.swing.JTextField();
-        input_rfc = new javax.swing.JTextField();
-        input_email = new javax.swing.JTextField();
-        input_numero = new javax.swing.JTextField();
-        input_direccion = new javax.swing.JTextField();
-        separador_nombre = new javax.swing.JSeparator();
-        separador_nombre1 = new javax.swing.JSeparator();
-        separador_nombre2 = new javax.swing.JSeparator();
-        separador_nombre3 = new javax.swing.JSeparator();
-        separador_nombre4 = new javax.swing.JSeparator();
-        separador_nombre5 = new javax.swing.JSeparator();
         panel_bookOpciones = new javax.swing.JPanel();
         BTN_DAy = new javax.swing.JButton();
         input_infante = new javax.swing.JTextField();
@@ -155,7 +112,51 @@ public class Windows extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        panel_bookClient = new javax.swing.JPanel();
+        carrito = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        title_carrito = new javax.swing.JLabel();
+        title_tour = new javax.swing.JLabel();
+        title_date = new javax.swing.JLabel();
+        title_adult1 = new javax.swing.JLabel();
+        title_child1 = new javax.swing.JLabel();
+        title_time1 = new javax.swing.JLabel();
+        tour_Time = new javax.swing.JLabel();
+        tour_name = new javax.swing.JLabel();
+        tour_date = new javax.swing.JLabel();
+        tour_adult = new javax.swing.JLabel();
+        tour_child = new javax.swing.JLabel();
+        tour_total = new javax.swing.JLabel();
+        title_infate = new javax.swing.JLabel();
+        tour_infante = new javax.swing.JLabel();
+        title_informacion = new javax.swing.JLabel();
+        btn_efectivo = new javax.swing.JButton();
+        btn_tarjeta = new javax.swing.JButton();
+        btn_facturacion = new javax.swing.JButton();
+        btn_regresar = new javax.swing.JButton();
+        btn_pagar = new javax.swing.JButton();
+        title_nombre = new javax.swing.JLabel();
+        title_apellido = new javax.swing.JLabel();
+        title_rfc = new javax.swing.JLabel();
+        title_email = new javax.swing.JLabel();
+        title_numero = new javax.swing.JLabel();
+        title_direccion = new javax.swing.JLabel();
+        input_nombre = new javax.swing.JTextField();
+        input_apellido = new javax.swing.JTextField();
+        input_rfc = new javax.swing.JTextField();
+        input_email = new javax.swing.JTextField();
+        input_numero = new javax.swing.JTextField();
+        input_direccion = new javax.swing.JTextField();
+        separador_nombre = new javax.swing.JSeparator();
+        separador_nombre1 = new javax.swing.JSeparator();
+        separador_nombre2 = new javax.swing.JSeparator();
+        separador_nombre3 = new javax.swing.JSeparator();
+        separador_nombre4 = new javax.swing.JSeparator();
+        separador_nombre5 = new javax.swing.JSeparator();
         panel_bookActivities = new javax.swing.JPanel();
+        btn_jungle = new javax.swing.JButton();
+        btn_mangrove = new javax.swing.JButton();
+        btn_scuba = new javax.swing.JButton();
         panel_Description = new javax.swing.JPanel();
         name_tour = new javax.swing.JLabel();
         moneda1 = new javax.swing.JLabel();
@@ -169,11 +170,16 @@ public class Windows extends javax.swing.JFrame {
         adult_price = new javax.swing.JLabel();
         banner = new javax.swing.JLabel();
         img_tour = new javax.swing.JLabel();
-        btn_jungle = new javax.swing.JButton();
-        btn_mangrove = new javax.swing.JButton();
-        btn_scuba = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        panel_opciones = new javax.swing.JPanel();
+        btn_terminos = new javax.swing.JButton();
+        btn_cancelaciones = new javax.swing.JButton();
+        btn_book = new javax.swing.JButton();
+        user_name = new javax.swing.JLabel();
+        guy = new javax.swing.JLabel();
+        icon_guy = new javax.swing.JLabel();
+        box = new javax.swing.JLabel();
         GeneralBG = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -223,295 +229,6 @@ public class Windows extends javax.swing.JFrame {
         panel_pasos.add(fondo_pasos, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1320, 90));
 
         getContentPane().add(panel_pasos, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 1300, 80));
-
-        panel_opciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btn_terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_TC_Static.png"))); // NOI18N
-        btn_terminos.setBorderPainted(false);
-        btn_terminos.setContentAreaFilled(false);
-        btn_terminos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_terminos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_terminosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_terminosMouseExited(evt);
-            }
-        });
-        btn_terminos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_terminosActionPerformed(evt);
-            }
-        });
-        panel_opciones.add(btn_terminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 300, -1));
-
-        btn_cancelaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Cancel_Static.png"))); // NOI18N
-        btn_cancelaciones.setBorderPainted(false);
-        btn_cancelaciones.setContentAreaFilled(false);
-        btn_cancelaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_cancelaciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_cancelacionesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_cancelacionesMouseExited(evt);
-            }
-        });
-        btn_cancelaciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelacionesActionPerformed(evt);
-            }
-        });
-        panel_opciones.add(btn_cancelaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 300, -1));
-
-        btn_book.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Book_Static.png"))); // NOI18N
-        btn_book.setBorderPainted(false);
-        btn_book.setContentAreaFilled(false);
-        btn_book.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_book.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_bookMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_bookMouseExited(evt);
-            }
-        });
-        btn_book.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_bookActionPerformed(evt);
-            }
-        });
-        panel_opciones.add(btn_book, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 300, -1));
-
-        user_name.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        user_name.setForeground(new java.awt.Color(255, 255, 255));
-        user_name.setText("Nombre de Usuario");
-        panel_opciones.add(user_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
-
-        guy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BC_Icn_Contact_02.png"))); // NOI18N
-        panel_opciones.add(guy, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 12, 70, 60));
-
-        icon_guy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BC_Icn_ContactBubble.png"))); // NOI18N
-        panel_opciones.add(icon_guy, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        box.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BC_Box_Left_Extended.png"))); // NOI18N
-        box.setMaximumSize(new java.awt.Dimension(300, 830));
-        box.setMinimumSize(new java.awt.Dimension(300, 830));
-        box.setPreferredSize(new java.awt.Dimension(300, 830));
-        panel_opciones.add(box, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 300, 870));
-
-        getContentPane().add(panel_opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 300, 830));
-
-        panel_bookClient.setBackground(new java.awt.Color(255, 255, 255));
-        panel_bookClient.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        carrito.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        carrito.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 490, 10));
-
-        title_carrito.setFont(new java.awt.Font("Roboto", 1, 32)); // NOI18N
-        title_carrito.setForeground(new java.awt.Color(0, 123, 164));
-        title_carrito.setText("Carrito");
-        carrito.add(title_carrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, -1));
-
-        title_tour.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        title_tour.setForeground(new java.awt.Color(153, 153, 153));
-        title_tour.setText("Tour: ");
-        carrito.add(title_tour, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
-
-        title_date.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        title_date.setForeground(new java.awt.Color(153, 153, 153));
-        title_date.setText("Date:");
-        carrito.add(title_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
-
-        title_adult1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        title_adult1.setForeground(new java.awt.Color(153, 153, 153));
-        title_adult1.setText("Adult:");
-        carrito.add(title_adult1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
-
-        title_child1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        title_child1.setForeground(new java.awt.Color(153, 153, 153));
-        title_child1.setText("Child:");
-        carrito.add(title_child1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
-
-        title_time1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        title_time1.setForeground(new java.awt.Color(153, 153, 153));
-        title_time1.setText("Time:");
-        carrito.add(title_time1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, -1));
-
-        tour_Time.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        tour_Time.setForeground(new java.awt.Color(153, 153, 153));
-        tour_Time.setText("00:00 hrs");
-        carrito.add(tour_Time, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 120, -1));
-
-        tour_name.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        tour_name.setForeground(new java.awt.Color(153, 153, 153));
-        tour_name.setText("Tour Mane");
-        carrito.add(tour_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 240, -1));
-
-        tour_date.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        tour_date.setForeground(new java.awt.Color(153, 153, 153));
-        tour_date.setText("00-month-0000");
-        carrito.add(tour_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 250, -1));
-
-        tour_adult.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        tour_adult.setForeground(new java.awt.Color(153, 153, 153));
-        tour_adult.setText("00");
-        carrito.add(tour_adult, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 50, -1));
-
-        tour_child.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        tour_child.setForeground(new java.awt.Color(153, 153, 153));
-        tour_child.setText("00");
-        carrito.add(tour_child, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 50, -1));
-
-        tour_total.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        tour_total.setForeground(new java.awt.Color(0, 102, 255));
-        tour_total.setText("$0000.00 USD");
-        carrito.add(tour_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 160, -1));
-
-        panel_bookClient.add(carrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 760));
-
-        title_informacion.setFont(new java.awt.Font("Roboto", 1, 32)); // NOI18N
-        title_informacion.setForeground(new java.awt.Color(0, 123, 164));
-        title_informacion.setText("Informacion del cliente");
-        panel_bookClient.add(title_informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, -1, -1));
-
-        btn_efectivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Dat_btn_Efectivo.png"))); // NOI18N
-        btn_efectivo.setBorderPainted(false);
-        btn_efectivo.setContentAreaFilled(false);
-        btn_efectivo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_efectivo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_efectivoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_efectivoMouseExited(evt);
-            }
-        });
-        panel_bookClient.add(btn_efectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 200, 50));
-
-        btn_tarjeta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Dat_btn_Tarjeta.png"))); // NOI18N
-        btn_tarjeta.setBorderPainted(false);
-        btn_tarjeta.setContentAreaFilled(false);
-        btn_tarjeta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_tarjeta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_tarjetaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_tarjetaMouseExited(evt);
-            }
-        });
-        panel_bookClient.add(btn_tarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 200, 50));
-
-        btn_facturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Dat_btn_Factura.png"))); // NOI18N
-        btn_facturacion.setBorderPainted(false);
-        btn_facturacion.setContentAreaFilled(false);
-        btn_facturacion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_facturacion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_facturacionMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_facturacionMouseExited(evt);
-            }
-        });
-        btn_facturacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_facturacionActionPerformed(evt);
-            }
-        });
-        panel_bookClient.add(btn_facturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 200, 50));
-
-        btn_regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Regresar.jpg"))); // NOI18N
-        btn_regresar.setBorderPainted(false);
-        btn_regresar.setContentAreaFilled(false);
-        btn_regresar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_regresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_regresarActionPerformed(evt);
-            }
-        });
-        panel_bookClient.add(btn_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 620, 100, 50));
-
-        btn_pagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Pagar.jpg"))); // NOI18N
-        btn_pagar.setBorderPainted(false);
-        btn_pagar.setContentAreaFilled(false);
-        btn_pagar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        panel_bookClient.add(btn_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 620, 100, 50));
-
-        title_nombre.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        title_nombre.setForeground(new java.awt.Color(153, 153, 153));
-        title_nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        title_nombre.setText("Nombre: ");
-        panel_bookClient.add(title_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, -1, -1));
-
-        title_apellido.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        title_apellido.setForeground(new java.awt.Color(153, 153, 153));
-        title_apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        title_apellido.setText("Apellido: ");
-        panel_bookClient.add(title_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, -1, -1));
-
-        title_rfc.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        title_rfc.setForeground(new java.awt.Color(153, 153, 153));
-        title_rfc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        title_rfc.setText("RFC");
-        panel_bookClient.add(title_rfc, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, -1, -1));
-
-        title_email.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        title_email.setForeground(new java.awt.Color(153, 153, 153));
-        title_email.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        title_email.setText("Email: ");
-        panel_bookClient.add(title_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, -1, -1));
-
-        title_numero.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        title_numero.setForeground(new java.awt.Color(153, 153, 153));
-        title_numero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        title_numero.setText("Numero: ");
-        panel_bookClient.add(title_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, -1, -1));
-
-        title_direccion.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        title_direccion.setForeground(new java.awt.Color(153, 153, 153));
-        title_direccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        title_direccion.setText("Direcc: ");
-        panel_bookClient.add(title_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, -1, -1));
-
-        input_nombre.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
-        input_nombre.setForeground(new java.awt.Color(153, 153, 153));
-        input_nombre.setBorder(null);
-        panel_bookClient.add(input_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 500, 30));
-
-        input_apellido.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
-        input_apellido.setForeground(new java.awt.Color(153, 153, 153));
-        input_apellido.setBorder(null);
-        panel_bookClient.add(input_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 250, 500, 30));
-
-        input_rfc.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
-        input_rfc.setForeground(new java.awt.Color(153, 153, 153));
-        input_rfc.setBorder(null);
-        panel_bookClient.add(input_rfc, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 500, 30));
-
-        input_email.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
-        input_email.setForeground(new java.awt.Color(153, 153, 153));
-        input_email.setBorder(null);
-        panel_bookClient.add(input_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 500, 30));
-
-        input_numero.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
-        input_numero.setForeground(new java.awt.Color(153, 153, 153));
-        input_numero.setBorder(null);
-        panel_bookClient.add(input_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 500, 30));
-
-        input_direccion.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
-        input_direccion.setForeground(new java.awt.Color(153, 153, 153));
-        input_direccion.setBorder(null);
-        panel_bookClient.add(input_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, 500, 30));
-        panel_bookClient.add(separador_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 510, 10));
-        panel_bookClient.add(separador_nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, 510, 10));
-        panel_bookClient.add(separador_nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, 510, 20));
-        panel_bookClient.add(separador_nombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 510, 10));
-        panel_bookClient.add(separador_nombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, 510, 20));
-        panel_bookClient.add(separador_nombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 480, 510, 40));
-
-        getContentPane().add(panel_bookClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 1300, 760));
 
         panel_bookOpciones.setBackground(new java.awt.Color(255, 255, 255));
         panel_bookOpciones.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -765,8 +482,291 @@ public class Windows extends javax.swing.JFrame {
 
         getContentPane().add(panel_bookOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 1300, 760));
 
+        panel_bookClient.setBackground(new java.awt.Color(255, 255, 255));
+        panel_bookClient.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        carrito.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        carrito.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 490, 10));
+
+        title_carrito.setFont(new java.awt.Font("Roboto", 1, 32)); // NOI18N
+        title_carrito.setForeground(new java.awt.Color(0, 123, 164));
+        title_carrito.setText("Carrito");
+        carrito.add(title_carrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, -1));
+
+        title_tour.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        title_tour.setForeground(new java.awt.Color(153, 153, 153));
+        title_tour.setText("Tour: ");
+        carrito.add(title_tour, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+
+        title_date.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        title_date.setForeground(new java.awt.Color(153, 153, 153));
+        title_date.setText("Date:");
+        carrito.add(title_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+
+        title_adult1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        title_adult1.setForeground(new java.awt.Color(153, 153, 153));
+        title_adult1.setText("Adult:");
+        carrito.add(title_adult1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+
+        title_child1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        title_child1.setForeground(new java.awt.Color(153, 153, 153));
+        title_child1.setText("Child:");
+        carrito.add(title_child1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
+
+        title_time1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        title_time1.setForeground(new java.awt.Color(153, 153, 153));
+        title_time1.setText("Time:");
+        carrito.add(title_time1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
+
+        tour_Time.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        tour_Time.setForeground(new java.awt.Color(153, 153, 153));
+        tour_Time.setText("00:00 hrs");
+        carrito.add(tour_Time, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 120, -1));
+
+        tour_name.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        tour_name.setForeground(new java.awt.Color(153, 153, 153));
+        tour_name.setText("Tour Mane");
+        carrito.add(tour_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 240, -1));
+
+        tour_date.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        tour_date.setForeground(new java.awt.Color(153, 153, 153));
+        tour_date.setText("00-month-0000");
+        carrito.add(tour_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 250, -1));
+
+        tour_adult.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        tour_adult.setForeground(new java.awt.Color(153, 153, 153));
+        tour_adult.setText("00");
+        carrito.add(tour_adult, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 50, -1));
+
+        tour_child.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        tour_child.setForeground(new java.awt.Color(153, 153, 153));
+        tour_child.setText("00");
+        carrito.add(tour_child, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 50, -1));
+
+        tour_total.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        tour_total.setForeground(new java.awt.Color(0, 102, 255));
+        tour_total.setText("$0000.00 USD");
+        carrito.add(tour_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 160, -1));
+
+        title_infate.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        title_infate.setForeground(new java.awt.Color(153, 153, 153));
+        title_infate.setText("Infante:");
+        carrito.add(title_infate, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
+
+        tour_infante.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        tour_infante.setForeground(new java.awt.Color(153, 153, 153));
+        tour_infante.setText("00");
+        carrito.add(tour_infante, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 50, -1));
+
+        panel_bookClient.add(carrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 760));
+
+        title_informacion.setFont(new java.awt.Font("Roboto", 1, 32)); // NOI18N
+        title_informacion.setForeground(new java.awt.Color(0, 123, 164));
+        title_informacion.setText("Informacion del cliente");
+        panel_bookClient.add(title_informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, -1, -1));
+
+        btn_efectivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Dat_btn_Efectivo.png"))); // NOI18N
+        btn_efectivo.setBorderPainted(false);
+        btn_efectivo.setContentAreaFilled(false);
+        btn_efectivo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_efectivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_efectivoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_efectivoMouseExited(evt);
+            }
+        });
+        panel_bookClient.add(btn_efectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 200, 50));
+
+        btn_tarjeta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Dat_btn_Tarjeta.png"))); // NOI18N
+        btn_tarjeta.setBorderPainted(false);
+        btn_tarjeta.setContentAreaFilled(false);
+        btn_tarjeta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_tarjeta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_tarjetaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_tarjetaMouseExited(evt);
+            }
+        });
+        panel_bookClient.add(btn_tarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 200, 50));
+
+        btn_facturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Dat_btn_Factura.png"))); // NOI18N
+        btn_facturacion.setBorderPainted(false);
+        btn_facturacion.setContentAreaFilled(false);
+        btn_facturacion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_facturacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_facturacionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_facturacionMouseExited(evt);
+            }
+        });
+        btn_facturacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_facturacionActionPerformed(evt);
+            }
+        });
+        panel_bookClient.add(btn_facturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 80, 200, 50));
+
+        btn_regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Regresar.jpg"))); // NOI18N
+        btn_regresar.setBorderPainted(false);
+        btn_regresar.setContentAreaFilled(false);
+        btn_regresar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_regresarActionPerformed(evt);
+            }
+        });
+        panel_bookClient.add(btn_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 620, -1, 50));
+
+        btn_pagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Pagar.jpg"))); // NOI18N
+        btn_pagar.setBorderPainted(false);
+        btn_pagar.setContentAreaFilled(false);
+        btn_pagar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_pagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pagarActionPerformed(evt);
+            }
+        });
+        panel_bookClient.add(btn_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 620, 100, 50));
+
+        title_nombre.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        title_nombre.setForeground(new java.awt.Color(153, 153, 153));
+        title_nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title_nombre.setText("Nombre: ");
+        panel_bookClient.add(title_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, -1, -1));
+
+        title_apellido.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        title_apellido.setForeground(new java.awt.Color(153, 153, 153));
+        title_apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title_apellido.setText("Apellido: ");
+        panel_bookClient.add(title_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, -1, -1));
+
+        title_rfc.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        title_rfc.setForeground(new java.awt.Color(153, 153, 153));
+        title_rfc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title_rfc.setText("RFC");
+        panel_bookClient.add(title_rfc, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, -1, -1));
+
+        title_email.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        title_email.setForeground(new java.awt.Color(153, 153, 153));
+        title_email.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title_email.setText("Email: ");
+        panel_bookClient.add(title_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, -1, -1));
+
+        title_numero.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        title_numero.setForeground(new java.awt.Color(153, 153, 153));
+        title_numero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title_numero.setText("Numero: ");
+        panel_bookClient.add(title_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, -1, -1));
+
+        title_direccion.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        title_direccion.setForeground(new java.awt.Color(153, 153, 153));
+        title_direccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title_direccion.setText("Direcc: ");
+        panel_bookClient.add(title_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, -1, -1));
+
+        input_nombre.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
+        input_nombre.setForeground(new java.awt.Color(153, 153, 153));
+        input_nombre.setBorder(null);
+        panel_bookClient.add(input_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 500, 30));
+
+        input_apellido.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
+        input_apellido.setForeground(new java.awt.Color(153, 153, 153));
+        input_apellido.setBorder(null);
+        panel_bookClient.add(input_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 250, 500, 30));
+
+        input_rfc.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
+        input_rfc.setForeground(new java.awt.Color(153, 153, 153));
+        input_rfc.setBorder(null);
+        panel_bookClient.add(input_rfc, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 500, 30));
+
+        input_email.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
+        input_email.setForeground(new java.awt.Color(153, 153, 153));
+        input_email.setBorder(null);
+        panel_bookClient.add(input_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 500, 30));
+
+        input_numero.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
+        input_numero.setForeground(new java.awt.Color(153, 153, 153));
+        input_numero.setBorder(null);
+        panel_bookClient.add(input_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 500, 30));
+
+        input_direccion.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
+        input_direccion.setForeground(new java.awt.Color(153, 153, 153));
+        input_direccion.setBorder(null);
+        panel_bookClient.add(input_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, 500, 30));
+        panel_bookClient.add(separador_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 510, 10));
+        panel_bookClient.add(separador_nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, 510, 10));
+        panel_bookClient.add(separador_nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, 510, 20));
+        panel_bookClient.add(separador_nombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 510, 10));
+        panel_bookClient.add(separador_nombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, 510, 20));
+        panel_bookClient.add(separador_nombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 480, 510, 40));
+
+        getContentPane().add(panel_bookClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 1300, 760));
+
         panel_bookActivities.setBackground(new java.awt.Color(255, 255, 255));
         panel_bookActivities.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_jungle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Jungle01_Static.jpg"))); // NOI18N
+        btn_jungle.setBorderPainted(false);
+        btn_jungle.setContentAreaFilled(false);
+        btn_jungle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_jungle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_jungleMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_jungleMouseExited(evt);
+            }
+        });
+        btn_jungle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_jungleActionPerformed(evt);
+            }
+        });
+        panel_bookActivities.add(btn_jungle, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 370, -1));
+
+        btn_mangrove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Mangroove_Static.jpg"))); // NOI18N
+        btn_mangrove.setBorderPainted(false);
+        btn_mangrove.setContentAreaFilled(false);
+        btn_mangrove.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_mangrove.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_mangroveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_mangroveMouseExited(evt);
+            }
+        });
+        btn_mangrove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mangroveActionPerformed(evt);
+            }
+        });
+        panel_bookActivities.add(btn_mangrove, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 370, -1));
+
+        btn_scuba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Scuba_Static.jpg"))); // NOI18N
+        btn_scuba.setBorderPainted(false);
+        btn_scuba.setContentAreaFilled(false);
+        btn_scuba.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_scuba.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_scubaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_scubaMouseExited(evt);
+            }
+        });
+        btn_scuba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_scubaActionPerformed(evt);
+            }
+        });
+        panel_bookActivities.add(btn_scuba, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 370, -1));
 
         panel_Description.setBackground(new java.awt.Color(222, 222, 222));
         panel_Description.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -853,63 +853,6 @@ public class Windows extends javax.swing.JFrame {
 
         panel_bookActivities.add(panel_Description, new org.netbeans.lib.awtextra.AbsoluteConstraints(786, 0, -1, 760));
 
-        btn_jungle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Jungle01_Static.jpg"))); // NOI18N
-        btn_jungle.setBorderPainted(false);
-        btn_jungle.setContentAreaFilled(false);
-        btn_jungle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_jungle.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_jungleMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_jungleMouseExited(evt);
-            }
-        });
-        btn_jungle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_jungleActionPerformed(evt);
-            }
-        });
-        panel_bookActivities.add(btn_jungle, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 370, -1));
-
-        btn_mangrove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Mangroove_Static.jpg"))); // NOI18N
-        btn_mangrove.setBorderPainted(false);
-        btn_mangrove.setContentAreaFilled(false);
-        btn_mangrove.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_mangrove.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_mangroveMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_mangroveMouseExited(evt);
-            }
-        });
-        btn_mangrove.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_mangroveActionPerformed(evt);
-            }
-        });
-        panel_bookActivities.add(btn_mangrove, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 370, -1));
-
-        btn_scuba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Scuba_Static.jpg"))); // NOI18N
-        btn_scuba.setBorderPainted(false);
-        btn_scuba.setContentAreaFilled(false);
-        btn_scuba.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_scuba.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_scubaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_scubaMouseExited(evt);
-            }
-        });
-        btn_scuba.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_scubaActionPerformed(evt);
-            }
-        });
-        panel_bookActivities.add(btn_scuba, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 370, -1));
-
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BoatRental_Static.jpg"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -933,6 +876,84 @@ public class Windows extends javax.swing.JFrame {
         panel_bookActivities.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 370, -1));
 
         getContentPane().add(panel_bookActivities, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 1300, 760));
+
+        panel_opciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_TC_Static.png"))); // NOI18N
+        btn_terminos.setBorderPainted(false);
+        btn_terminos.setContentAreaFilled(false);
+        btn_terminos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_terminos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_terminosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_terminosMouseExited(evt);
+            }
+        });
+        btn_terminos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_terminosActionPerformed(evt);
+            }
+        });
+        panel_opciones.add(btn_terminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 300, -1));
+
+        btn_cancelaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Cancel_Static.png"))); // NOI18N
+        btn_cancelaciones.setBorderPainted(false);
+        btn_cancelaciones.setContentAreaFilled(false);
+        btn_cancelaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_cancelaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cancelacionesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_cancelacionesMouseExited(evt);
+            }
+        });
+        btn_cancelaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelacionesActionPerformed(evt);
+            }
+        });
+        panel_opciones.add(btn_cancelaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 300, -1));
+
+        btn_book.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Book_Static.png"))); // NOI18N
+        btn_book.setBorderPainted(false);
+        btn_book.setContentAreaFilled(false);
+        btn_book.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_book.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_bookMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_bookMouseExited(evt);
+            }
+        });
+        btn_book.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_bookActionPerformed(evt);
+            }
+        });
+        panel_opciones.add(btn_book, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 300, -1));
+
+        user_name.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        user_name.setForeground(new java.awt.Color(255, 255, 255));
+        user_name.setText("Nombre de Usuario");
+        panel_opciones.add(user_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
+
+        guy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BC_Icn_Contact_02.png"))); // NOI18N
+        panel_opciones.add(guy, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 12, 70, 60));
+
+        icon_guy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BC_Icn_ContactBubble.png"))); // NOI18N
+        panel_opciones.add(icon_guy, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        box.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BC_Box_Left_Extended.png"))); // NOI18N
+        box.setMaximumSize(new java.awt.Dimension(300, 830));
+        box.setMinimumSize(new java.awt.Dimension(300, 830));
+        box.setPreferredSize(new java.awt.Dimension(300, 830));
+        panel_opciones.add(box, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 300, 870));
+
+        getContentPane().add(panel_opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 300, 830));
 
         GeneralBG.setBackground(new java.awt.Color(255, 255, 255));
         GeneralBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1009,6 +1030,8 @@ public class Windows extends javax.swing.JFrame {
         this.panel_Description.setVisible(false);
         panel_bookOpciones.setVisible(false);
         panel_bookClient.setVisible(false);
+        this.jButton1.setVisible(true);
+        this.jButton2.setVisible(true);
     }//GEN-LAST:event_btn_bookActionPerformed
 
     private void btn_cancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelar1ActionPerformed
@@ -1110,10 +1133,8 @@ public class Windows extends javax.swing.JFrame {
     private void BTN_DAyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_DAyActionPerformed
         // TODO add your handling code here:
         String[] arrayDate = Input_Date.getDate().toLocaleString().split("/");
-        date = arrayDate[1];
-        for (int i = 0; i < arrayDate.length; i++) {
-	System.out.println(arrayDate[i]);
-}
+        dateDB = arrayDate[2].substring(0, 4)+"-"+arrayDate[1]+"-"+arrayDate[0];
+        date= arrayDate[0]+"/"+arrayDate[1]+"/"+arrayDate[2].substring(0, 4);
     }//GEN-LAST:event_BTN_DAyActionPerformed
 
     private void btn_mxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mxActionPerformed
@@ -1125,6 +1146,7 @@ public class Windows extends javax.swing.JFrame {
         float P=Float.parseFloat(this.input_nino.getText())*Float.parseFloat(this.precio_nino.getText());
         float D=Float.parseFloat(this.input_infante.getText())*Float.parseFloat(this.precio_infante.getText());
         this.totalPrice.setText("$ "+Float.toString(A+P+D));
+        this.precioTotal=A+P+D;
         ImageIcon img = new ImageIcon(getClass().getResource("/img/Ag_btn_mx.png"));
         moneda.setIcon(img);
     }//GEN-LAST:event_btn_mxActionPerformed
@@ -1237,6 +1259,8 @@ float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.prec
         // TODO add your handling code here:
         panel_bookOpciones.setVisible(false);
         panel_bookActivities.setVisible(true);
+        this.jButton1.setVisible(true);
+        this.jButton2.setVisible(true);
         tipo=0;
         ImageIcon img = new ImageIcon(getClass().getResource(""));
         ImageIcon ban = new ImageIcon(getClass().getResource(""));
@@ -1295,11 +1319,16 @@ float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.prec
         panel_bookOpciones.setVisible(false);
         panel_bookClient.setVisible(true);
         this.tour_Time.setText(time);
-        //DATE FORMATO//this.tour_date.setText(date.toLocaleString());
+        this.tour_date.setText(date);
         this.tour_name.setText(conn.TourName(tipo));
         this.tour_total.setText(this.totalPrice.getText());
+        float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.precio_adulto.getText());
+        float P=Float.parseFloat(this.input_nino.getText())*Float.parseFloat(this.precio_nino.getText());
+        float D=Float.parseFloat(this.input_infante.getText())*Float.parseFloat(this.precio_infante.getText());
+        this.precioTotal=A+P+D;
         this.tour_adult.setText(this.input_adulto.getText());
         this.tour_child.setText(this.input_nino.getText());
+        this.tour_infante.setText(this.input_infante.getText());
     }//GEN-LAST:event_btn_siguienteActionPerformed
 
     private void btn_jungleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_jungleMouseEntered
@@ -1367,6 +1396,25 @@ float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.prec
         panel_bookOpciones.setVisible(true);
         panel_bookClient.setVisible(false);
     }//GEN-LAST:event_btn_regresarActionPerformed
+
+    private void btn_pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagarActionPerformed
+        // TODO add your handling code here:
+       
+        //SE CONFIRMA EL PAGO Y SE MUESTRA EL TOTAL
+        int reply = JOptionPane.showConfirmDialog(null,"Confirmar pago. Total : "+ tour_total.getText(), "Confirmar Pago", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+        //Cliente
+        //SE DEBE VERIFICAR SI NO HAY UN CLIENTE ACTIVO YA( SEGUIR COMPRANDO) O SI EL CLIENTE YA HABIA COMPRADO ANTES
+        if(conn.NewClient(input_email.getText(),input_nombre.getText(),input_apellido.getText(),input_numero.getText(),input_direccion.getText())&&conn.NewVendidos(2,2, Integer.parseInt(tour_adult.getText()),Integer.parseInt(tour_child.getText()),Integer.parseInt(tour_infante.getText()),precioTotal))
+            JOptionPane.showMessageDialog(null, "Pago Exitoso", "SystemMessage: " + "Succesfull Payment", JOptionPane.INFORMATION_MESSAGE);
+        //SE CREA VENDIDOS
+        
+        }
+        else {
+            
+        }
+        
+    }//GEN-LAST:event_btn_pagarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1502,6 +1550,7 @@ float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.prec
     private javax.swing.JLabel title_date;
     private javax.swing.JLabel title_direccion;
     private javax.swing.JLabel title_email;
+    private javax.swing.JLabel title_infate;
     private javax.swing.JLabel title_informacion;
     private javax.swing.JLabel title_nombre;
     private javax.swing.JLabel title_numero;
@@ -1513,6 +1562,7 @@ float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.prec
     private javax.swing.JLabel tour_adult;
     private javax.swing.JLabel tour_child;
     private javax.swing.JLabel tour_date;
+    private javax.swing.JLabel tour_infante;
     private javax.swing.JLabel tour_name;
     private javax.swing.JLabel tour_total;
     private javax.swing.JLabel user_name;

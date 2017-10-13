@@ -150,6 +150,44 @@ public class Conecction {
         
     }
     
+    //public int GetIDFecha
+            
+    //public int getIDCliente
+    
+     public boolean NewClient(String correo,String nombre,String apellido, String telefono, String direccion){
+        
+        try{
+            Connection con=DriverManager.getConnection(url,user,pass);
+            String query = "INSERT INTO `cliente`(`idCliente`, `correo`, `nombre`, `apellido`, `telefono`, `direccion`) VALUES (0,\""+correo+"\",\""+nombre+"\",\""+apellido+"\",\""+telefono+"\",\""+direccion+"\")";
+            Statement st = con.createStatement();
+            st.executeUpdate(query);
+            return true;
+        }
+        catch(Exception e){
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return false;
+        }
+        
+    }
+    //Conseguir el idCliente que se crea o continua comprando Conseguir el id del tour haciendo la busqueda con la fecha
+     public boolean NewVendidos(int idCliente,int idfecha,int cant1,int cant2,int cant3,float preciototal){
+        
+        try{
+            Connection con=DriverManager.getConnection(url,user,pass);
+            String query = "INSERT INTO `vendido`(`idVendido`, `idCliente`, `idFechatour`, `cantNino`, `cantAdultos`, `cantInfantes`, `precioTotal`) VALUES (0,\""+idCliente+"\",\""+idfecha+"\",\""+cant1+"\","+ "\""+cant2+"\",\""+cant3+"\",\""+preciototal+"\")";
+            Statement st = con.createStatement();
+            st.executeUpdate(query);
+            return true;
+        }
+        catch(Exception e){
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return false;
+        }
+        
+    }
+    
     public ResultSet logInData(String email_input)
     {
         try
