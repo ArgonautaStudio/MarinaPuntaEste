@@ -47,7 +47,7 @@ public class Windows extends javax.swing.JFrame {
     }
     public Windows(String username){
         initComponents();
-        this.user_name.setText(username);
+        this.user_name.setText("User: " + username);
         this.conn = new Conecction();
         this.setLocationRelativeTo(this);
         prices1=conn.getPrices(1);
@@ -74,44 +74,6 @@ public class Windows extends javax.swing.JFrame {
         panel_pasos = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         fondo_pasos = new javax.swing.JLabel();
-        panel_bookOpciones = new javax.swing.JPanel();
-        BTN_DAy = new javax.swing.JButton();
-        input_infante = new javax.swing.JTextField();
-        input_nino = new javax.swing.JTextField();
-        input_adulto = new javax.swing.JTextField();
-        btn_seguirComprando = new javax.swing.JButton();
-        btn_cancelar = new javax.swing.JButton();
-        btn_siguiente = new javax.swing.JButton();
-        btn_mx = new javax.swing.JButton();
-        btn_usd = new javax.swing.JButton();
-        btn_codigoPromocion = new javax.swing.JLabel();
-        moneda = new javax.swing.JLabel();
-        Horario1 = new javax.swing.JRadioButton();
-        Horario3 = new javax.swing.JRadioButton();
-        Horario2 = new javax.swing.JRadioButton();
-        totalPrice = new javax.swing.JLabel();
-        precio_infante = new javax.swing.JLabel();
-        precio_nino = new javax.swing.JLabel();
-        Input_Date = new com.toedter.calendar.JCalendar();
-        precio_adulto = new javax.swing.JLabel();
-        fondito6 = new javax.swing.JLabel();
-        fondito5 = new javax.swing.JLabel();
-        fondito4 = new javax.swing.JLabel();
-        fondito3 = new javax.swing.JLabel();
-        fondito2 = new javax.swing.JLabel();
-        fondito1 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         panel_bookClient = new javax.swing.JPanel();
         carrito = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -172,6 +134,44 @@ public class Windows extends javax.swing.JFrame {
         img_tour = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        panel_bookOpciones = new javax.swing.JPanel();
+        BTN_DAy = new javax.swing.JButton();
+        input_infante = new javax.swing.JTextField();
+        input_nino = new javax.swing.JTextField();
+        input_adulto = new javax.swing.JTextField();
+        btn_seguirComprando = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
+        btn_siguiente = new javax.swing.JButton();
+        btn_mx = new javax.swing.JButton();
+        btn_usd = new javax.swing.JButton();
+        btn_codigoPromocion = new javax.swing.JLabel();
+        moneda = new javax.swing.JLabel();
+        Horario1 = new javax.swing.JRadioButton();
+        Horario3 = new javax.swing.JRadioButton();
+        Horario2 = new javax.swing.JRadioButton();
+        totalPrice = new javax.swing.JLabel();
+        precio_infante = new javax.swing.JLabel();
+        precio_nino = new javax.swing.JLabel();
+        Input_Date = new com.toedter.calendar.JCalendar();
+        precio_adulto = new javax.swing.JLabel();
+        fondito6 = new javax.swing.JLabel();
+        fondito5 = new javax.swing.JLabel();
+        fondito4 = new javax.swing.JLabel();
+        fondito3 = new javax.swing.JLabel();
+        fondito2 = new javax.swing.JLabel();
+        fondito1 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         panel_opciones = new javax.swing.JPanel();
         btn_terminos = new javax.swing.JButton();
         btn_cancelaciones = new javax.swing.JButton();
@@ -229,258 +229,6 @@ public class Windows extends javax.swing.JFrame {
         panel_pasos.add(fondo_pasos, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1320, 90));
 
         getContentPane().add(panel_pasos, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 1300, 80));
-
-        panel_bookOpciones.setBackground(new java.awt.Color(255, 255, 255));
-        panel_bookOpciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panel_bookOpcionesMouseEntered(evt);
-            }
-        });
-        panel_bookOpciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        BTN_DAy.setText("Choose Day");
-        BTN_DAy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTN_DAyActionPerformed(evt);
-            }
-        });
-        panel_bookOpciones.add(BTN_DAy, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, -1, -1));
-
-        input_infante.setBackground(new java.awt.Color(240, 240, 240));
-        input_infante.setFont(new java.awt.Font("Roboto", 0, 55)); // NOI18N
-        input_infante.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        input_infante.setText("0");
-        input_infante.setAutoscrolls(false);
-        input_infante.setBorder(null);
-        input_infante.setOpaque(false);
-        input_infante.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                input_infanteFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                input_infanteFocusLost(evt);
-            }
-        });
-        panel_bookOpciones.add(input_infante, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 330, 60, 60));
-
-        input_nino.setBackground(new java.awt.Color(240, 240, 240));
-        input_nino.setFont(new java.awt.Font("Roboto", 0, 55)); // NOI18N
-        input_nino.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        input_nino.setText("0");
-        input_nino.setAutoscrolls(false);
-        input_nino.setBorder(null);
-        input_nino.setOpaque(false);
-        input_nino.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                input_ninoFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                input_ninoFocusLost(evt);
-            }
-        });
-        panel_bookOpciones.add(input_nino, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 230, 60, 60));
-
-        input_adulto.setBackground(new java.awt.Color(240, 240, 240));
-        input_adulto.setFont(new java.awt.Font("Roboto", 0, 55)); // NOI18N
-        input_adulto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        input_adulto.setText("0");
-        input_adulto.setAutoscrolls(false);
-        input_adulto.setBorder(null);
-        input_adulto.setOpaque(false);
-        input_adulto.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                input_adultoFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                input_adultoFocusLost(evt);
-            }
-        });
-        panel_bookOpciones.add(input_adulto, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 130, 60, 60));
-
-        btn_seguirComprando.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Comprar.jpg"))); // NOI18N
-        btn_seguirComprando.setBorderPainted(false);
-        btn_seguirComprando.setContentAreaFilled(false);
-        btn_seguirComprando.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        panel_bookOpciones.add(btn_seguirComprando, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 670, 160, 50));
-
-        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Cancelar.jpg"))); // NOI18N
-        btn_cancelar.setBorderPainted(false);
-        btn_cancelar.setContentAreaFilled(false);
-        btn_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelarActionPerformed(evt);
-            }
-        });
-        panel_bookOpciones.add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 670, 100, 50));
-
-        btn_siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Siguiente.jpg"))); // NOI18N
-        btn_siguiente.setBorderPainted(false);
-        btn_siguiente.setContentAreaFilled(false);
-        btn_siguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_siguiente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_siguienteActionPerformed(evt);
-            }
-        });
-        panel_bookOpciones.add(btn_siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 670, 100, 50));
-
-        btn_mx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_btn_mx_select.png"))); // NOI18N
-        btn_mx.setBorderPainted(false);
-        btn_mx.setContentAreaFilled(false);
-        btn_mx.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_mx.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_mxActionPerformed(evt);
-            }
-        });
-        panel_bookOpciones.add(btn_mx, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 70, 40, 30));
-
-        btn_usd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_btn_usd.png"))); // NOI18N
-        btn_usd.setBorderPainted(false);
-        btn_usd.setContentAreaFilled(false);
-        btn_usd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_usd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_usdActionPerformed(evt);
-            }
-        });
-        panel_bookOpciones.add(btn_usd, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 80, 50, 20));
-
-        btn_codigoPromocion.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        btn_codigoPromocion.setForeground(new java.awt.Color(51, 153, 255));
-        btn_codigoPromocion.setText("Codigo de promocion");
-        btn_codigoPromocion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        panel_bookOpciones.add(btn_codigoPromocion, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 590, -1, -1));
-
-        moneda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_btn_mx.png"))); // NOI18N
-        moneda.setToolTipText("");
-        panel_bookOpciones.add(moneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 560, -1, -1));
-
-        Horario1.setText("10:00 AM");
-        Horario1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Horario1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Horario1ActionPerformed(evt);
-            }
-        });
-        panel_bookOpciones.add(Horario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, -1, -1));
-
-        Horario3.setText("16:00 PM");
-        Horario3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Horario3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Horario3ActionPerformed(evt);
-            }
-        });
-        panel_bookOpciones.add(Horario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 550, -1, 20));
-
-        Horario2.setText("12:00 PM");
-        Horario2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Horario2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Horario2ActionPerformed(evt);
-            }
-        });
-        panel_bookOpciones.add(Horario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 550, -1, -1));
-
-        totalPrice.setFont(new java.awt.Font("Roboto", 0, 62)); // NOI18N
-        totalPrice.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        totalPrice.setText("$000.00");
-        panel_bookOpciones.add(totalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 520, 400, -1));
-
-        precio_infante.setFont(new java.awt.Font("Roboto", 0, 26)); // NOI18N
-        precio_infante.setForeground(new java.awt.Color(255, 255, 255));
-        precio_infante.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        precio_infante.setText("$0000");
-        panel_bookOpciones.add(precio_infante, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 350, 80, -1));
-
-        precio_nino.setFont(new java.awt.Font("Roboto", 0, 26)); // NOI18N
-        precio_nino.setForeground(new java.awt.Color(255, 255, 255));
-        precio_nino.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        precio_nino.setText("$0000");
-        panel_bookOpciones.add(precio_nino, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 250, 80, -1));
-
-        Input_Date.setDate(new java.util.Date(1507218632000L));
-        Input_Date.setWeekOfYearVisible(false);
-        panel_bookOpciones.add(Input_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 370, 270));
-
-        precio_adulto.setFont(new java.awt.Font("Roboto", 0, 26)); // NOI18N
-        precio_adulto.setForeground(new java.awt.Color(255, 255, 255));
-        precio_adulto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        precio_adulto.setText("$0000");
-        panel_bookOpciones.add(precio_adulto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 150, 80, -1));
-
-        fondito6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Price.jpg"))); // NOI18N
-        panel_bookOpciones.add(fondito6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 320, -1, -1));
-
-        fondito5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Price.jpg"))); // NOI18N
-        panel_bookOpciones.add(fondito5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 220, -1, -1));
-
-        fondito4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Price.jpg"))); // NOI18N
-        panel_bookOpciones.add(fondito4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 120, -1, -1));
-
-        fondito3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Description.jpg"))); // NOI18N
-        panel_bookOpciones.add(fondito3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 320, -1, -1));
-
-        fondito2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Description.jpg"))); // NOI18N
-        panel_bookOpciones.add(fondito2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 220, -1, -1));
-
-        fondito1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Description.jpg"))); // NOI18N
-        fondito1.setOpaque(true);
-        panel_bookOpciones.add(fondito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 120, -1, -1));
-
-        jLabel18.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel18.setText("Infante");
-        panel_bookOpciones.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, -1, -1));
-
-        jLabel17.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel17.setText("Nino");
-        panel_bookOpciones.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 220, -1, -1));
-
-        jLabel16.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel16.setText("Adulto");
-        panel_bookOpciones.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 120, -1, -1));
-
-        jLabel15.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel15.setText("x");
-        panel_bookOpciones.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 360, 20, 20));
-
-        jLabel14.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel14.setText("x");
-        panel_bookOpciones.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 260, 20, 20));
-
-        jLabel13.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel13.setText("x");
-        panel_bookOpciones.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 150, 20, 20));
-
-        jLabel12.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 123, 164));
-        jLabel12.setText("Total");
-        panel_bookOpciones.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 470, -1, -1));
-
-        jLabel11.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 123, 164));
-        jLabel11.setText("Hora");
-        panel_bookOpciones.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 123, 164));
-        jLabel10.setText("Precio");
-        panel_bookOpciones.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 20, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 123, 164));
-        jLabel9.setText("Dia");
-        panel_bookOpciones.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Box_Day.jpg"))); // NOI18N
-        panel_bookOpciones.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 700, 470));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Box_Hour.jpg"))); // NOI18N
-        panel_bookOpciones.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, -1, -1));
-
-        getContentPane().add(panel_bookOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 1300, 760));
 
         panel_bookClient.setBackground(new java.awt.Color(255, 255, 255));
         panel_bookClient.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -877,6 +625,262 @@ public class Windows extends javax.swing.JFrame {
 
         getContentPane().add(panel_bookActivities, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 1300, 760));
 
+        panel_bookOpciones.setBackground(new java.awt.Color(255, 255, 255));
+        panel_bookOpciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panel_bookOpcionesMouseEntered(evt);
+            }
+        });
+        panel_bookOpciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BTN_DAy.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        BTN_DAy.setText("Choose Day");
+        BTN_DAy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_DAyActionPerformed(evt);
+            }
+        });
+        panel_bookOpciones.add(BTN_DAy, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, -1, -1));
+
+        input_infante.setBackground(new java.awt.Color(240, 240, 240));
+        input_infante.setFont(new java.awt.Font("Roboto", 0, 55)); // NOI18N
+        input_infante.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        input_infante.setText("0");
+        input_infante.setAutoscrolls(false);
+        input_infante.setBorder(null);
+        input_infante.setOpaque(false);
+        input_infante.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_infanteFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_infanteFocusLost(evt);
+            }
+        });
+        panel_bookOpciones.add(input_infante, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 330, 60, 60));
+
+        input_nino.setBackground(new java.awt.Color(240, 240, 240));
+        input_nino.setFont(new java.awt.Font("Roboto", 0, 55)); // NOI18N
+        input_nino.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        input_nino.setText("0");
+        input_nino.setAutoscrolls(false);
+        input_nino.setBorder(null);
+        input_nino.setOpaque(false);
+        input_nino.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_ninoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_ninoFocusLost(evt);
+            }
+        });
+        panel_bookOpciones.add(input_nino, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 230, 60, 60));
+
+        input_adulto.setBackground(new java.awt.Color(240, 240, 240));
+        input_adulto.setFont(new java.awt.Font("Roboto", 0, 55)); // NOI18N
+        input_adulto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        input_adulto.setText("0");
+        input_adulto.setAutoscrolls(false);
+        input_adulto.setBorder(null);
+        input_adulto.setOpaque(false);
+        input_adulto.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                input_adultoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                input_adultoFocusLost(evt);
+            }
+        });
+        panel_bookOpciones.add(input_adulto, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 130, 60, 60));
+
+        btn_seguirComprando.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Comprar.jpg"))); // NOI18N
+        btn_seguirComprando.setBorderPainted(false);
+        btn_seguirComprando.setContentAreaFilled(false);
+        btn_seguirComprando.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        panel_bookOpciones.add(btn_seguirComprando, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 670, 160, 50));
+
+        btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Cancelar.jpg"))); // NOI18N
+        btn_cancelar.setBorderPainted(false);
+        btn_cancelar.setContentAreaFilled(false);
+        btn_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
+        panel_bookOpciones.add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 670, 100, 50));
+
+        btn_siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_Siguiente.jpg"))); // NOI18N
+        btn_siguiente.setBorderPainted(false);
+        btn_siguiente.setContentAreaFilled(false);
+        btn_siguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_siguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_siguienteActionPerformed(evt);
+            }
+        });
+        panel_bookOpciones.add(btn_siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 670, 100, 50));
+
+        btn_mx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_btn_mx_select.png"))); // NOI18N
+        btn_mx.setBorderPainted(false);
+        btn_mx.setContentAreaFilled(false);
+        btn_mx.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_mx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mxActionPerformed(evt);
+            }
+        });
+        panel_bookOpciones.add(btn_mx, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 70, 40, 30));
+
+        btn_usd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_btn_usd.png"))); // NOI18N
+        btn_usd.setBorderPainted(false);
+        btn_usd.setContentAreaFilled(false);
+        btn_usd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_usd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_usdActionPerformed(evt);
+            }
+        });
+        panel_bookOpciones.add(btn_usd, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 80, 50, 20));
+
+        btn_codigoPromocion.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        btn_codigoPromocion.setForeground(new java.awt.Color(51, 153, 255));
+        btn_codigoPromocion.setText("Codigo de promocion");
+        btn_codigoPromocion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        panel_bookOpciones.add(btn_codigoPromocion, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 590, -1, -1));
+
+        moneda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_btn_mx.png"))); // NOI18N
+        moneda.setToolTipText("");
+        panel_bookOpciones.add(moneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 560, -1, -1));
+
+        Horario1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        Horario1.setText("10:00 AM");
+        Horario1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Horario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Horario1ActionPerformed(evt);
+            }
+        });
+        panel_bookOpciones.add(Horario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, -1, -1));
+
+        Horario3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        Horario3.setText("16:00 PM");
+        Horario3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Horario3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Horario3ActionPerformed(evt);
+            }
+        });
+        panel_bookOpciones.add(Horario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 550, -1, 30));
+
+        Horario2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        Horario2.setText("12:00 PM");
+        Horario2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Horario2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Horario2ActionPerformed(evt);
+            }
+        });
+        panel_bookOpciones.add(Horario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, -1, -1));
+
+        totalPrice.setFont(new java.awt.Font("Roboto", 0, 62)); // NOI18N
+        totalPrice.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        totalPrice.setText("$000.00");
+        panel_bookOpciones.add(totalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 520, 400, -1));
+
+        precio_infante.setFont(new java.awt.Font("Roboto", 0, 26)); // NOI18N
+        precio_infante.setForeground(new java.awt.Color(255, 255, 255));
+        precio_infante.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        precio_infante.setText("$0000");
+        panel_bookOpciones.add(precio_infante, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 350, 80, -1));
+
+        precio_nino.setFont(new java.awt.Font("Roboto", 0, 26)); // NOI18N
+        precio_nino.setForeground(new java.awt.Color(255, 255, 255));
+        precio_nino.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        precio_nino.setText("$0000");
+        panel_bookOpciones.add(precio_nino, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 250, 80, -1));
+
+        Input_Date.setDate(new java.util.Date(1507218632000L));
+        Input_Date.setWeekOfYearVisible(false);
+        panel_bookOpciones.add(Input_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 370, 270));
+
+        precio_adulto.setFont(new java.awt.Font("Roboto", 0, 26)); // NOI18N
+        precio_adulto.setForeground(new java.awt.Color(255, 255, 255));
+        precio_adulto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        precio_adulto.setText("$0000");
+        panel_bookOpciones.add(precio_adulto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 150, 80, -1));
+
+        fondito6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Price.jpg"))); // NOI18N
+        panel_bookOpciones.add(fondito6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 320, -1, -1));
+
+        fondito5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Price.jpg"))); // NOI18N
+        panel_bookOpciones.add(fondito5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 220, -1, -1));
+
+        fondito4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Price.jpg"))); // NOI18N
+        panel_bookOpciones.add(fondito4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 120, -1, -1));
+
+        fondito3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Description.jpg"))); // NOI18N
+        panel_bookOpciones.add(fondito3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 320, -1, -1));
+
+        fondito2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Description.jpg"))); // NOI18N
+        panel_bookOpciones.add(fondito2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 220, -1, -1));
+
+        fondito1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Btn_Description.jpg"))); // NOI18N
+        fondito1.setOpaque(true);
+        panel_bookOpciones.add(fondito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 120, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel18.setText("Infante");
+        panel_bookOpciones.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel17.setText("Nino");
+        panel_bookOpciones.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 220, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel16.setText("Adulto");
+        panel_bookOpciones.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 120, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jLabel15.setText("x");
+        panel_bookOpciones.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 360, 20, 20));
+
+        jLabel14.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jLabel14.setText("x");
+        panel_bookOpciones.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 260, 20, 20));
+
+        jLabel13.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jLabel13.setText("x");
+        panel_bookOpciones.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 150, 20, 20));
+
+        jLabel12.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 123, 164));
+        jLabel12.setText("Total");
+        panel_bookOpciones.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 470, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 123, 164));
+        jLabel11.setText("Hora");
+        panel_bookOpciones.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 470, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 123, 164));
+        jLabel10.setText("Precio");
+        panel_bookOpciones.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 20, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 123, 164));
+        jLabel9.setText("Dia");
+        panel_bookOpciones.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Box_Day.jpg"))); // NOI18N
+        panel_bookOpciones.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 700, 470));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ag_Box_Hour.jpg"))); // NOI18N
+        panel_bookOpciones.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, -1, -1));
+
+        getContentPane().add(panel_bookOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 1300, 760));
+
         panel_opciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_TC_Static.png"))); // NOI18N
@@ -939,7 +943,7 @@ public class Windows extends javax.swing.JFrame {
         user_name.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         user_name.setForeground(new java.awt.Color(255, 255, 255));
         user_name.setText("Nombre de Usuario");
-        panel_opciones.add(user_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
+        panel_opciones.add(user_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
         guy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BC_Icn_Contact_02.png"))); // NOI18N
         panel_opciones.add(guy, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 12, 70, 60));
@@ -1062,7 +1066,9 @@ public class Windows extends javax.swing.JFrame {
         this.precio_adulto.setText(Float.toString(prices.priceMXadulto));
         this.precio_nino.setText(Float.toString(prices.priceMXnino));
         this.precio_infante.setText(Float.toString(prices.priceMXinfante));
-        
+        Horario1.setText(conn.gethour(1,tipo));
+        Horario2.setText(conn.gethour(2,tipo));
+        Horario3.setText(conn.gethour(3,tipo));
     }//GEN-LAST:event_btn_siguiente1ActionPerformed
 
     private void btn_jungleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jungleActionPerformed
@@ -1170,7 +1176,7 @@ public class Windows extends javax.swing.JFrame {
             this.Horario2.setSelected(false);
             this.Horario3.setSelected(false);
         }
-        time="10:00";
+        time=conn.gethour(1,tipo);
     }//GEN-LAST:event_Horario1ActionPerformed
 
     private void Horario3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Horario3ActionPerformed
@@ -1179,7 +1185,7 @@ public class Windows extends javax.swing.JFrame {
             this.Horario1.setSelected(false);
             this.Horario2.setSelected(false);
         }
-        time="16:00";
+        time=conn.gethour(3,tipo);
     }//GEN-LAST:event_Horario3ActionPerformed
 
     private void Horario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Horario2ActionPerformed
@@ -1188,7 +1194,7 @@ public class Windows extends javax.swing.JFrame {
             this.Horario1.setSelected(false);
             this.Horario3.setSelected(false);
         }
-        time="12:00";
+        time=conn.gethour(2,tipo);
     }//GEN-LAST:event_Horario2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1405,9 +1411,14 @@ float A=Float.parseFloat(this.input_adulto.getText())*Float.parseFloat(this.prec
         if (reply == JOptionPane.YES_OPTION) {
         //Cliente
         //SE DEBE VERIFICAR SI NO HAY UN CLIENTE ACTIVO YA( SEGUIR COMPRANDO) O SI EL CLIENTE YA HABIA COMPRADO ANTES
+        //SE DEBE ADQUIRIR EL ID DE FECHA TOUR Y ID CLIENTE 
+        //SE DEBE GUARDAR EL RFC SI ESTA ACTIVADO, Y SE DEBE GUARDAR SI FUE EN DOLARES O MX Y SI FUE TARJETA O EFECTIVO
         if(conn.NewClient(input_email.getText(),input_nombre.getText(),input_apellido.getText(),input_numero.getText(),input_direccion.getText())&&conn.NewVendidos(2,2, Integer.parseInt(tour_adult.getText()),Integer.parseInt(tour_child.getText()),Integer.parseInt(tour_infante.getText()),precioTotal))
             JOptionPane.showMessageDialog(null, "Pago Exitoso", "SystemMessage: " + "Succesfull Payment", JOptionPane.INFORMATION_MESSAGE);
         //SE CREA VENDIDOS
+        //DEBE AFECTAR A TURISTAS DE TABLA FECHATOUR
+        else 
+            JOptionPane.showMessageDialog(null,"Error al confirmar pago","Error",JOptionPane.INFORMATION_MESSAGE);
         
         }
         else {

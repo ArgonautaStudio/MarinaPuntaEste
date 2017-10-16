@@ -194,7 +194,7 @@ public class Conecction {
         {
             Class.forName(myDriver);
             Connection conn = DriverManager.getConnection(url, user, pass);
-            String query = "SELECT * FROM Marina.login where correo = \""+email_input+"\"";
+            String query = "SELECT * FROM Marina_PDE_DB.login where correo = \""+email_input+"\"";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             return rs;
@@ -212,8 +212,8 @@ public class Conecction {
         try
         {
             Class.forName(myDriver);
-            Connection conn = DriverManager.getConnection(url, user, pass);
-            String query = "SELECT * FROM Marina.tour";
+            Connection conn=DriverManager.getConnection(url,user,pass);
+            String query = "SELECT * FROM Marina_PDE_DB.tour";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             ArrayList<Tour> list = new ArrayList<Tour>();
@@ -222,8 +222,7 @@ public class Conecction {
 
             while(rs.next())
             {
-               item = new Tour(rs.getInt("idTour"),rs.getString("nombre"),rs.getString("descripcion"),rs.getBytes("multimedia"));
-               
+               item = new Tour(rs.getInt("idTour"),rs.getString("nombre"),rs.getString("descripcion"),rs.getInt("capacidad"),rs.getString("hora1"),rs.getString("hora2"),rs.getString("hora3"),rs.getFloat("precioAdultoMX"),rs.getFloat("precioNinoMX"),rs.getFloat("precioInfanteMX"),rs.getFloat("precioAdultoUS"),rs.getFloat("precioNinoUS"),rs.getFloat("precioInfanteUS"));
                list.add(item);
             }
             return list;
@@ -236,30 +235,7 @@ public class Conecction {
         }
     }    
     
-    public String [] getDates(int type){
-        try
-        {
-            Class.forName(myDriver);
-            Connection conn = DriverManager.getConnection(url, user, pass);
-            String []names = new String[1];
-            String query = "SELECT distinct fecha FROM Marina.fechatour where idtour = " + type;
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            while(rs.next())
-            {
-               Date fecha = rs.getDate("fecha");
-               names[0]=fecha.toString();
-            }
-            return names;
-        }
-        catch (ClassNotFoundException | SQLException e)
-        {
-            System.err.println("Got an exception! ");
-            System.err.println(e.getMessage());
-            return null;
-        }
-        
-    }
+ 
   
     public Prices getPrices(int tipo){
         Prices item = null;
@@ -303,6 +279,81 @@ public class Conecction {
             System.err.println("Got an exception! ");
             System.err.println(e.getMessage());
             return "";
+        }
+    }
+
+    public String gethour(int i,int tipo) {
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "SELECT hora"+i+" FROM Marina_PDE_DB.tour where idtour = " + tipo;
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               return rs.getTime("hora"+i).toString();
+            }
+            return "";
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return "";
+        }
+    }
+    
+    public void updateTour(float p1,float p2,float p3,float p4,float p5,float p6,int cap,String hora1,String hora2,String hora3,int id){
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "UPDATE Marina_PDE_DB.tour SET precioAdultoUS="+ p4 +",precioAdultoMX="+ p1 +",precioNinoMX="+ p2 +",precioInfanteMX="+ p3 +",precioNinoUS="+ p5 +",precioInfanteUS="+ p6 +",capacidad="+ cap +",hora1='"+ hora1 +"',hora2='"+ hora2 +"',hora3='"+ hora3 +"' where idtour = " + id;
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public ResultSet logInUsers() {
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "SELECT * FROM Marina_PDE_DB.login";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            return rs;
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return null;
+        }
+    }
+    //AGREGAR QUE SOLO MUESTRE LOS TOURS PROXIMOS A PARTIR DE HOY()
+    //Y los filtrados posibles
+    public ResultSet incTours() {
+          try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "SELECT * FROM Marina_PDE_DB.fechatour JOIN Marina_PDE_DB.tour ON Marina_PDE_DB.fechatour.idtour = Marina_PDE_DB.tour.idtour and Marina_PDE_DB.fechatour.turistas > 0";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            return rs;
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return null;
         }
     }
 }
