@@ -21,7 +21,7 @@ public class Tour {
     
     
     public Tour (Integer id, String nombre,String descrip,int cap,String hora1,String hora2,String hora3,float precio1mx,
-            float precio2mx,float precio3mx,float precio1us, float precio2us,float precio3us)
+            float precio2mx,float precio1us, float precio2us)
     {
       this.idTour=id;
       this.nombre=nombre;
@@ -33,9 +33,9 @@ public class Tour {
       this.precioAdultoMX=precio1mx;
       this.precioAdultoUS=precio1us;
       this.precioNinoMX=precio2mx;
-      this.precioInfanteMX=precio3mx;
+      this.precioInfanteMX=0.0f;
       this.precioNinoUS=precio2us;
-      this.precioInfanteUS=precio3us;
+      this.precioInfanteUS=0.0f;
     }
     
 }

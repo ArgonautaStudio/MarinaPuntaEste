@@ -97,7 +97,7 @@ public class LogInWindow extends javax.swing.JFrame {
 
         Pan_LogIn.setLayout(null);
 
-        Drager.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        Drager.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Drager.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 DragerMouseDragged(evt);
@@ -114,7 +114,7 @@ public class LogInWindow extends javax.swing.JFrame {
         Btn_Close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/SI_Bt_Cerrar.png"))); // NOI18N
         Btn_Close.setBorderPainted(false);
         Btn_Close.setContentAreaFilled(false);
-        Btn_Close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn_Close.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Btn_Close.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Btn_CloseMouseEntered(evt);
@@ -142,7 +142,7 @@ public class LogInWindow extends javax.swing.JFrame {
         Input_ID.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         Input_ID.setForeground(new java.awt.Color(153, 153, 153));
         Input_ID.setBorder(null);
-        Input_ID.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Input_ID.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Input_ID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Input_IDActionPerformed(evt);
@@ -160,7 +160,7 @@ public class LogInWindow extends javax.swing.JFrame {
         Btn_LogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_LogIn_Normal_1.png"))); // NOI18N
         Btn_LogIn.setBorderPainted(false);
         Btn_LogIn.setContentAreaFilled(false);
-        Btn_LogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn_LogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Btn_LogIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Btn_LogInMouseEntered(evt);
@@ -225,7 +225,7 @@ public class LogInWindow extends javax.swing.JFrame {
         Btn_SignIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Sign_Normal.png"))); // NOI18N
         Btn_SignIn.setBorderPainted(false);
         Btn_SignIn.setContentAreaFilled(false);
-        Btn_SignIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn_SignIn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Btn_SignIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Btn_SignInMouseEntered(evt);
@@ -251,7 +251,7 @@ public class LogInWindow extends javax.swing.JFrame {
         Input_ID1.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         Input_ID1.setForeground(new java.awt.Color(153, 153, 153));
         Input_ID1.setBorder(null);
-        Input_ID1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Input_ID1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Input_ID1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Input_ID1ActionPerformed(evt);
@@ -266,7 +266,7 @@ public class LogInWindow extends javax.swing.JFrame {
         Pan_SignIn.add(jLabel_signIn1);
         jLabel_signIn1.setBounds(60, 40, 110, 40);
 
-        Drager1.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        Drager1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Drager1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 Drager1MouseDragged(evt);
@@ -283,7 +283,7 @@ public class LogInWindow extends javax.swing.JFrame {
         Btn_Close1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/SI_Bt_Cerrar.png"))); // NOI18N
         Btn_Close1.setBorderPainted(false);
         Btn_Close1.setContentAreaFilled(false);
-        Btn_Close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn_Close1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Btn_Close1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Btn_Close1MouseEntered(evt);
@@ -428,7 +428,7 @@ public class LogInWindow extends javax.swing.JFrame {
         CSignIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/SI_Bt_LogIn_02.png"))); // NOI18N
         CSignIn.setBorderPainted(false);
         CSignIn.setContentAreaFilled(false);
-        CSignIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CSignIn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         CSignIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 CSignInMouseEntered(evt);
@@ -472,7 +472,7 @@ public class LogInWindow extends javax.swing.JFrame {
         CLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LI_Btn_SignIn_02.png"))); // NOI18N
         CLogIn.setBorderPainted(false);
         CLogIn.setContentAreaFilled(false);
-        CLogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CLogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         CLogIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 CLogInMouseEntered(evt);

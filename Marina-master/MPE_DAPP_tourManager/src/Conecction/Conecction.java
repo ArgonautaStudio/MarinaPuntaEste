@@ -213,7 +213,7 @@ public class Conecction {
         {
             Class.forName(myDriver);
             Connection conn=DriverManager.getConnection(url,user,pass);
-            String query = "SELECT * FROM Marina_PDE_DB.tour";
+            String query = "SELECT * ,Valor FROM Marina_PDE_DB.tour, Marina_PDE_DB.Precios where Marina_PDE_DB.Precios.IdPrecio like \"dolarval\"";;
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             ArrayList<Tour> list = new ArrayList<Tour>();
@@ -222,7 +222,7 @@ public class Conecction {
 
             while(rs.next())
             {
-               item = new Tour(rs.getInt("idTour"),rs.getString("nombre"),rs.getString("descripcion"),rs.getInt("capacidad"),rs.getString("hora1"),rs.getString("hora2"),rs.getString("hora3"),rs.getFloat("precioAdultoMX"),rs.getFloat("precioNinoMX"),rs.getFloat("precioInfanteMX"),rs.getFloat("precioAdultoUS"),rs.getFloat("precioNinoUS"),rs.getFloat("precioInfanteUS"));
+               item = new Tour(rs.getInt("idTour"),rs.getString("nombre"),rs.getString("descripcion"),rs.getInt("capacidad"),rs.getString("hora1"),rs.getString("hora2"),rs.getString("hora3"),rs.getFloat("precioAdultoUS")*rs.getFloat("Valor"),rs.getFloat("precioNinoUS")*rs.getFloat("Valor"),rs.getFloat("precioAdultoUS"),rs.getFloat("precioNinoUS"));
                list.add(item);
             }
             return list;
@@ -243,12 +243,12 @@ public class Conecction {
         {
             Class.forName(myDriver);
             Connection conn = DriverManager.getConnection(url, user, pass);
-            String query = "SELECT precioAdultoMX,precioNinoMX,precioInfanteMX,precioAdultoUS,precioNinoUS,precioInfanteUS FROM Marina_PDE_DB.tour where idtour = " + tipo;
+            String query = "SELECT precioAdultoUS,precioNinoUS,Valor FROM Marina_PDE_DB.tour, Marina_PDE_DB.Precios where Marina_PDE_DB.tour.idtour = " + tipo + " and Marina_PDE_DB.Precios.IdPrecio like \"dolarval\"";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             while(rs.next())
             {
-               item = new Prices(rs.getFloat("precioAdultoMX"),rs.getFloat("precioNinoMX"),rs.getFloat("precioInfanteMX"),rs.getFloat("precioAdultoUS"),rs.getFloat("precioNinoUS"),rs.getFloat("precioInfanteUS"));
+               item = new Prices(rs.getFloat("precioAdultoUS"),rs.getFloat("precioNinoUS"),rs.getFloat("precioAdultoUS")*rs.getFloat("Valor"),rs.getFloat("precioNinoUS")*rs.getFloat("Valor"));
             }
             return item;
         }
@@ -304,12 +304,12 @@ public class Conecction {
         }
     }
     
-    public void updateTour(float p1,float p2,float p3,float p4,float p5,float p6,int cap,String hora1,String hora2,String hora3,int id){
+    public void updateTour(float p1,float p2,int cap,String hora1,String hora2,String hora3,int id){
         try
         {
             Class.forName(myDriver);
             Connection conn = DriverManager.getConnection(url, user, pass);
-            String query = "UPDATE Marina_PDE_DB.tour SET precioAdultoUS="+ p4 +",precioAdultoMX="+ p1 +",precioNinoMX="+ p2 +",precioInfanteMX="+ p3 +",precioNinoUS="+ p5 +",precioInfanteUS="+ p6 +",capacidad="+ cap +",hora1='"+ hora1 +"',hora2='"+ hora2 +"',hora3='"+ hora3 +"' where idtour = " + id;
+            String query = "UPDATE Marina_PDE_DB.tour SET precioAdultoUS="+ p1 +",precioNinoUS="+ p2 + ",capacidad="+ cap +",hora1='"+ hora1 +"',hora2='"+ hora2 +"',hora3='"+ hora3 +"' where idtour = " + id;
             Statement st = conn.createStatement();
             st.executeUpdate(query);
         }
@@ -344,7 +344,215 @@ public class Conecction {
         {
             Class.forName(myDriver);
             Connection conn = DriverManager.getConnection(url, user, pass);
-            String query = "SELECT * FROM Marina_PDE_DB.fechatour JOIN Marina_PDE_DB.tour ON Marina_PDE_DB.fechatour.idtour = Marina_PDE_DB.tour.idtour and Marina_PDE_DB.fechatour.turistas > 0";
+            String query = "SELECT * FROM Marina_PDE_DB.fechatour JOIN Marina_PDE_DB.tour ON Marina_PDE_DB.fechatour.idtour = Marina_PDE_DB.tour.idtour and Marina_PDE_DB.fechatour.turistas > 0 and Marina_PDE_DB.fechatour.fecha > CURDATE()";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            return rs;
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public void DeleteVendor(int id) {
+       try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "delete from Marina_PDE_DB.login where idLogIn = " + id;
+            Statement st = conn.createStatement();
+            st.execute(query);
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public void changeDolVal(float val) {
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "UPDATE Marina_PDE_DB.Precios SET Valor="+ val +" where IdPrecio like \"dolarval\"";
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public String getDolVal() {
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "select Valor from Marina_PDE_DB.Precios where IdPrecio like \"dolarval\"";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               return Float.toString(rs.getFloat("Valor"));
+            }
+            return "";
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return "";
+        }
+    }
+
+    public String getPromotionCode(int i) {
+    try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "select descripcion from Marina_PDE_DB.Precios where IdPrecio like \"prom"+i+"\"";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               return rs.getString("descripcion");
+            }
+            return "";
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return "";
+        }
+    }
+
+    public String getPromotionDiscount(int i) {
+            try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "select Valor from Marina_PDE_DB.Precios where IdPrecio like \"prom"+i+"\"";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               return Float.toString(rs.getFloat("Valor")*100);
+            }
+            return "";
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return "";
+        }
+    }
+    
+    public void changePromVal(float val,String desc,int i) {
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "UPDATE Marina_PDE_DB.Precios SET Valor = "+ val +", descripcion= \""+desc +"\" where IdPrecio like \"prom"+i+"\"";
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public void changeExtra1Val(float val) {
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "UPDATE Marina_PDE_DB.Precios SET Valor = "+ val +" where IdPrecio like \"extra"+1+"\"";
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public void changeExtra2Val(float val) {
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "UPDATE Marina_PDE_DB.Precios SET Valor = "+ val +" where IdPrecio like \"extra"+2+"\"";
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public String getExtraDesc(int i) {
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "select descripcion from Marina_PDE_DB.Precios where IdPrecio like \"extra"+i+"\"";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               return rs.getString("descripcion");
+            }
+            return "";
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return "";
+        }
+    }
+
+    public String getExtraVal(int i) {
+        try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "select Valor from Marina_PDE_DB.Precios where IdPrecio like \"extra"+i+"\"";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               return Float.toString(rs.getFloat("Valor"));
+            }
+            return "";
+        }
+        catch (ClassNotFoundException | SQLException e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+            return "";
+        }
+    }
+
+    public ResultSet clientesfecha(int id) {
+     try
+        {
+            Class.forName(myDriver);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            String query = "SELECT * FROM Marina_PDE_DB.cliente JOIN Marina_PDE_DB.vendido ON Marina_PDE_DB.cliente.idCliente = Marina_PDE_DB.vendido.idCliente where idFechatour = "+ id;
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             return rs;
@@ -357,3 +565,4 @@ public class Conecction {
         }
     }
 }
+

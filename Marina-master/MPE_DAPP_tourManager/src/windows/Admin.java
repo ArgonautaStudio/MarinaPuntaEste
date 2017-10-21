@@ -36,6 +36,10 @@ public class Admin extends javax.swing.JFrame {
         this.conn = new Conecction();
         this.mod_tour.setVisible(false);
         this.admin_ven.setVisible(false);
+        this.inc_tours.setVisible(false);
+        this.changeVal.setText(this.conn.getDolVal());
+        this.promCodeWin.setVisible(false);
+        this.ExtraWin.setVisible(false);
     }
 
     /**
@@ -51,37 +55,27 @@ public class Admin extends javax.swing.JFrame {
         ModificarTour = new javax.swing.JButton();
         AdminVendedores = new javax.swing.JButton();
         MostrarTours = new javax.swing.JButton();
-        admin_ven = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaLogIn = new javax.swing.JTable();
+        ModificarPromCode = new javax.swing.JButton();
+        ModificarExtraCharge = new javax.swing.JButton();
+        modDolVal = new javax.swing.JButton();
+        changeVal = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         mod_tour = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         tourName1 = new javax.swing.JLabel();
-        Price1_MX1 = new javax.swing.JTextField();
-        Price1_MX2 = new javax.swing.JTextField();
-        Price1_MX3 = new javax.swing.JTextField();
         Price1_US1 = new javax.swing.JTextField();
         Price1_US2 = new javax.swing.JTextField();
-        Price1_US3 = new javax.swing.JTextField();
         Cap1 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         tourName2 = new javax.swing.JLabel();
-        Price2_MX1 = new javax.swing.JTextField();
-        Price2_MX2 = new javax.swing.JTextField();
-        Price2_MX3 = new javax.swing.JTextField();
         Price2_US1 = new javax.swing.JTextField();
         Price2_US2 = new javax.swing.JTextField();
-        Price2_US3 = new javax.swing.JTextField();
         Cap2 = new javax.swing.JTextField();
-        Price3_MX2 = new javax.swing.JTextField();
         tourName3 = new javax.swing.JLabel();
-        Price3_MX1 = new javax.swing.JTextField();
-        Price3_US3 = new javax.swing.JTextField();
         Cap3 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        Price3_MX3 = new javax.swing.JTextField();
         Price3_US2 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         Price3_US1 = new javax.swing.JTextField();
@@ -104,6 +98,38 @@ public class Admin extends javax.swing.JFrame {
         inc_tours = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tour_table = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        client_list = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        fechaTourID = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        clientFecha = new javax.swing.JTable();
+        promCodeWin = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        codigo = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        descuento = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        toggleProm1 = new javax.swing.JToggleButton();
+        toggleProm2 = new javax.swing.JToggleButton();
+        toggleProm3 = new javax.swing.JToggleButton();
+        toggleProm4 = new javax.swing.JToggleButton();
+        toggleProm5 = new javax.swing.JToggleButton();
+        update_promo = new javax.swing.JButton();
+        admin_ven = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaLogIn = new javax.swing.JTable();
+        txtVendElimin = new javax.swing.JLabel();
+        input_deleteVendId = new javax.swing.JTextField();
+        TxtUsre = new javax.swing.JLabel();
+        Delete_Vendor = new javax.swing.JButton();
+        ExtraWin = new javax.swing.JPanel();
+        txtextra1 = new javax.swing.JLabel();
+        txtextra2 = new javax.swing.JLabel();
+        input_extra1 = new javax.swing.JTextField();
+        input_extra2 = new javax.swing.JTextField();
+        btn_UpdateExtra = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -111,7 +137,7 @@ public class Admin extends javax.swing.JFrame {
 
         main_panel.setBackground(new java.awt.Color(255, 255, 255));
 
-        ModificarTour.setText("Modificar tour");
+        ModificarTour.setText("Modificar Tour");
         ModificarTour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModificarTourActionPerformed(evt);
@@ -132,20 +158,52 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
+        ModificarPromCode.setText("Modificar codigos de promociion");
+        ModificarPromCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarPromCodeActionPerformed(evt);
+            }
+        });
+
+        ModificarExtraCharge.setText("Modificar Cargos Extra");
+        ModificarExtraCharge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarExtraChargeActionPerformed(evt);
+            }
+        });
+
+        modDolVal.setText("Modificar");
+        modDolVal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modDolValActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel3.setText("Valor de cambio del Dolar");
+
         javax.swing.GroupLayout main_panelLayout = new javax.swing.GroupLayout(main_panel);
         main_panel.setLayout(main_panelLayout);
         main_panelLayout.setHorizontalGroup(
             main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(main_panelLayout.createSequentialGroup()
                 .addGap(311, 311, 311)
-                .addComponent(MostrarTours, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ModificarTour, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MostrarTours, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                    .addComponent(ModificarPromCode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(144, 144, 144)
-                .addComponent(AdminVendedores, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(AdminVendedores, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                        .addComponent(ModificarExtraCharge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(main_panelLayout.createSequentialGroup()
+                            .addComponent(changeVal, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(modDolVal))
+                        .addComponent(jLabel3)))
                 .addGap(0, 247, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, main_panelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ModificarTour, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(504, 504, 504))
         );
         main_panelLayout.setVerticalGroup(
             main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,48 +212,23 @@ public class Admin extends javax.swing.JFrame {
                 .addGroup(main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AdminVendedores, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                     .addComponent(MostrarTours, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(91, 91, 91)
-                .addComponent(ModificarTour, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addGroup(main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ModificarPromCode, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ModificarExtraCharge, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addGroup(main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ModificarTour, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(changeVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(modDolVal))
+                    .addGroup(main_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)))
+                .addGap(67, 67, 67))
         );
 
         getContentPane().add(main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
-
-        admin_ven.setBackground(new java.awt.Color(255, 255, 255));
-
-        tablaLogIn.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        tablaLogIn.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"", null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "User#", "UserID", "Password", "Level"
-            }
-        ));
-        tablaLogIn.setEnabled(false);
-        jScrollPane1.setViewportView(tablaLogIn);
-
-        javax.swing.GroupLayout admin_venLayout = new javax.swing.GroupLayout(admin_ven);
-        admin_ven.setLayout(admin_venLayout);
-        admin_venLayout.setHorizontalGroup(
-            admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(admin_venLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(556, Short.MAX_VALUE))
-        );
-        admin_venLayout.setVerticalGroup(
-            admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(admin_venLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(482, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(admin_ven, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
 
         mod_tour.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -206,8 +239,6 @@ public class Admin extends javax.swing.JFrame {
 
         tourName1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         tourName1.setText("TOURNAME");
-
-        Price1_MX2.setText(" ");
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("PRECIOS");
@@ -279,51 +310,45 @@ public class Admin extends javax.swing.JFrame {
             .addGroup(mod_tourLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Price1_US1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Price1_US2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Price1_US3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(mod_tourLayout.createSequentialGroup()
-                        .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(UpdateTour1)
-                            .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(mod_tourLayout.createSequentialGroup()
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(31, 31, 31)
-                                    .addComponent(jLabel5))
-                                .addGroup(mod_tourLayout.createSequentialGroup()
-                                    .addComponent(Price1_MX1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(30, 30, 30)
-                                    .addComponent(Cap1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(Price1_MX2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Price1_MX3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(27, 27, 27)
-                        .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Hora1_2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Hora1_3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Hora1_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(mod_tourLayout.createSequentialGroup()
                         .addGap(79, 79, 79)
-                        .addComponent(tourName1)))
-                .addGap(60, 60, 60)
+                        .addComponent(tourName1))
+                    .addGroup(mod_tourLayout.createSequentialGroup()
+                        .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mod_tourLayout.createSequentialGroup()
+                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mod_tourLayout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(31, 31, 31))
+                                    .addGroup(mod_tourLayout.createSequentialGroup()
+                                        .addComponent(Price1_US1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)))
+                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Cap1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5)))
+                            .addComponent(Price1_US2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(UpdateTour1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(27, 27, 27)
+                        .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Hora1_2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Hora1_3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Hora1_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mod_tourLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
                         .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mod_tourLayout.createSequentialGroup()
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(21, 21, 21)
                                 .addComponent(jLabel8))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mod_tourLayout.createSequentialGroup()
-                                .addComponent(Price2_MX1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
+                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Price2_US1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Price2_US2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(Cap2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(UpdateTour2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Price2_MX2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Price2_MX3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Price2_US1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Price2_US2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Price2_US3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(UpdateTour2, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
                         .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -331,47 +356,44 @@ public class Admin extends javax.swing.JFrame {
                             .addComponent(Hora2_3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Hora2_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(mod_tourLayout.createSequentialGroup()
-                        .addGap(69, 69, 69)
+                        .addGap(129, 129, 129)
                         .addComponent(tourName2)))
-                .addGap(53, 53, 53)
                 .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mod_tourLayout.createSequentialGroup()
-                        .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mod_tourLayout.createSequentialGroup()
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel11))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mod_tourLayout.createSequentialGroup()
-                                .addComponent(Price3_MX1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(Cap3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(UpdateTour3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Price3_MX2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Price3_MX3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Price3_US1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Price3_US2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Price3_US3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Hora3_2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Hora3_3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Hora3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(122, 122, 122)
+                        .addComponent(tourName3))
                     .addGroup(mod_tourLayout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(tourName3)))
-                .addContainerGap(466, Short.MAX_VALUE))
+                        .addGap(54, 54, 54)
+                        .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mod_tourLayout.createSequentialGroup()
+                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mod_tourLayout.createSequentialGroup()
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(jLabel11))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mod_tourLayout.createSequentialGroup()
+                                        .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Price3_US1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Price3_US2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Cap3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Hora3_2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Hora3_3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Hora3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(mod_tourLayout.createSequentialGroup()
+                                .addGap(79, 79, 79)
+                                .addComponent(UpdateTour3)))))
+                .addGap(81, 466, Short.MAX_VALUE))
         );
         mod_tourLayout.setVerticalGroup(
             mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mod_tourLayout.createSequentialGroup()
                 .addGap(0, 95, Short.MAX_VALUE)
                 .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(mod_tourLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(UpdateTour3))
-                    .addGroup(mod_tourLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mod_tourLayout.createSequentialGroup()
                         .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mod_tourLayout.createSequentialGroup()
                                 .addComponent(jButton1)
@@ -387,30 +409,17 @@ public class Admin extends javax.swing.JFrame {
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(9, 9, 9)
-                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(mod_tourLayout.createSequentialGroup()
-                                        .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Price1_MX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Cap1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Price1_MX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Price1_MX3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Price1_US1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Price1_US2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Price1_US3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(mod_tourLayout.createSequentialGroup()
-                                        .addComponent(Hora1_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Hora1_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Hora1_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                                .addComponent(UpdateTour1))
+                                .addGap(15, 15, 15)
+                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Price1_US1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Cap1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Hora1_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(10, 10, 10)
+                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Price1_US2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Hora1_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Hora1_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mod_tourLayout.createSequentialGroup()
                                 .addGap(7, 7, 7)
                                 .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -428,54 +437,41 @@ public class Admin extends javax.swing.JFrame {
                                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(9, 9, 9)
                                         .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Price3_MX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Cap3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Price3_MX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Price3_MX3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Price3_US1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Price3_US2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Price3_US3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                            .addComponent(Cap3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(mod_tourLayout.createSequentialGroup()
+                                                .addComponent(Price3_US1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(10, 10, 10)
+                                                .addComponent(Price3_US2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mod_tourLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(mod_tourLayout.createSequentialGroup()
-                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(9, 9, 9)
-                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Price2_MX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Cap2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Price2_MX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(Price2_MX3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(Price2_US1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(Price2_US2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(Price2_US3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(52, 52, 52))
-                            .addGroup(mod_tourLayout.createSequentialGroup()
                                 .addComponent(tourName2)
                                 .addGap(25, 25, 25)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9)
-                                .addComponent(Hora2_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(9, 9, 9)
+                        .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mod_tourLayout.createSequentialGroup()
+                                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Hora2_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Cap2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(10, 10, 10)
                                 .addComponent(Hora2_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(Hora2_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(UpdateTour2)))))
-                .addGap(92, 92, 92))
+                                .addComponent(Hora2_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mod_tourLayout.createSequentialGroup()
+                                .addComponent(Price2_US1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(Price2_US2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(44, 44, 44)
+                .addGroup(mod_tourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UpdateTour2)
+                    .addComponent(UpdateTour3)
+                    .addComponent(UpdateTour1))
+                .addContainerGap(259, Short.MAX_VALUE))
         );
 
         getContentPane().add(mod_tour, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 650));
@@ -495,24 +491,316 @@ public class Admin extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tour_table);
 
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel1.setText("Proximos Tours");
+
+        client_list.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        client_list.setText("Ver");
+        client_list.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                client_listActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("TOUR ID");
+
+        fechaTourID.setText("ID");
+
+        clientFecha.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(clientFecha);
+
         javax.swing.GroupLayout inc_toursLayout = new javax.swing.GroupLayout(inc_tours);
         inc_tours.setLayout(inc_toursLayout);
         inc_toursLayout.setHorizontalGroup(
             inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inc_toursLayout.createSequentialGroup()
+                .addGap(302, 302, 302)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inc_toursLayout.createSequentialGroup()
-                .addContainerGap(194, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(119, 119, 119))
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addGroup(inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inc_toursLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(369, 369, 369)
+                        .addGroup(inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(fechaTourID)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(client_list, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
         );
         inc_toursLayout.setVerticalGroup(
             inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(inc_toursLayout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(388, Short.MAX_VALUE))
+                .addGap(68, 68, 68)
+                .addComponent(jLabel1)
+                .addGroup(inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inc_toursLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fechaTourID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(client_list))
+                    .addGroup(inc_toursLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89))
         );
 
         getContentPane().add(inc_tours, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
+
+        promCodeWin.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel13.setText("PROMOCION");
+
+        jLabel14.setText("CODIGO:");
+
+        jLabel15.setText("DESCUENTO:");
+
+        jLabel16.setText("%");
+
+        toggleProm1.setText("1");
+        toggleProm1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleProm1ActionPerformed(evt);
+            }
+        });
+
+        toggleProm2.setText("2");
+        toggleProm2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleProm2ActionPerformed(evt);
+            }
+        });
+
+        toggleProm3.setText("3");
+        toggleProm3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleProm3ActionPerformed(evt);
+            }
+        });
+
+        toggleProm4.setText("4");
+        toggleProm4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleProm4ActionPerformed(evt);
+            }
+        });
+
+        toggleProm5.setText("5");
+        toggleProm5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleProm5ActionPerformed(evt);
+            }
+        });
+
+        update_promo.setText("Update");
+        update_promo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_promoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout promCodeWinLayout = new javax.swing.GroupLayout(promCodeWin);
+        promCodeWin.setLayout(promCodeWinLayout);
+        promCodeWinLayout.setHorizontalGroup(
+            promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(promCodeWinLayout.createSequentialGroup()
+                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(promCodeWinLayout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(toggleProm1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(toggleProm2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(toggleProm3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(toggleProm4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(toggleProm5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(promCodeWinLayout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(promCodeWinLayout.createSequentialGroup()
+                                .addComponent(descuento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel16))))
+                    .addGroup(promCodeWinLayout.createSequentialGroup()
+                        .addGap(193, 193, 193)
+                        .addComponent(update_promo)))
+                .addContainerGap(912, Short.MAX_VALUE))
+        );
+        promCodeWinLayout.setVerticalGroup(
+            promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(promCodeWinLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(toggleProm1)
+                    .addComponent(toggleProm2)
+                    .addComponent(toggleProm3)
+                    .addComponent(toggleProm4)
+                    .addComponent(toggleProm5))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel13)
+                .addGap(23, 23, 23)
+                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGap(18, 18, 18)
+                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(descuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(18, 18, 18)
+                .addComponent(update_promo)
+                .addContainerGap(441, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(promCodeWin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
+
+        admin_ven.setBackground(new java.awt.Color(255, 255, 255));
+
+        tablaLogIn.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        tablaLogIn.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"", null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "User#", "UserID", "Password", "Level"
+            }
+        ));
+        tablaLogIn.setEnabled(false);
+        jScrollPane1.setViewportView(tablaLogIn);
+
+        txtVendElimin.setText("Eliminar a un vendedor");
+
+        TxtUsre.setText("User# :");
+
+        Delete_Vendor.setText("Eliminar");
+        Delete_Vendor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Delete_VendorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout admin_venLayout = new javax.swing.GroupLayout(admin_ven);
+        admin_ven.setLayout(admin_venLayout);
+        admin_venLayout.setHorizontalGroup(
+            admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(admin_venLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(admin_venLayout.createSequentialGroup()
+                        .addGap(209, 209, 209)
+                        .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtVendElimin, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(admin_venLayout.createSequentialGroup()
+                                .addComponent(TxtUsre)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(input_deleteVendId, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(admin_venLayout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(Delete_Vendor)))
+                .addContainerGap(227, Short.MAX_VALUE))
+        );
+        admin_venLayout.setVerticalGroup(
+            admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(admin_venLayout.createSequentialGroup()
+                .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(admin_venLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(admin_venLayout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(txtVendElimin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(input_deleteVendId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtUsre))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Delete_Vendor)))
+                .addContainerGap(482, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(admin_ven, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
+
+        ExtraWin.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtextra1.setText("EXTRA");
+
+        txtextra2.setText("EXTRA");
+
+        btn_UpdateExtra.setText("UPDATE");
+        btn_UpdateExtra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_UpdateExtraActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ExtraWinLayout = new javax.swing.GroupLayout(ExtraWin);
+        ExtraWin.setLayout(ExtraWinLayout);
+        ExtraWinLayout.setHorizontalGroup(
+            ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ExtraWinLayout.createSequentialGroup()
+                .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ExtraWinLayout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(ExtraWinLayout.createSequentialGroup()
+                                .addComponent(txtextra2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(input_extra2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(ExtraWinLayout.createSequentialGroup()
+                                .addComponent(txtextra1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(input_extra1))))
+                    .addGroup(ExtraWinLayout.createSequentialGroup()
+                        .addGap(337, 337, 337)
+                        .addComponent(btn_UpdateExtra)))
+                .addContainerGap(892, Short.MAX_VALUE))
+        );
+        ExtraWinLayout.setVerticalGroup(
+            ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ExtraWinLayout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtextra1)
+                    .addComponent(input_extra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(btn_UpdateExtra)
+                .addGap(19, 19, 19)
+                .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtextra2)
+                    .addComponent(input_extra2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(442, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(ExtraWin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -523,47 +811,37 @@ public class Admin extends javax.swing.JFrame {
         //Abre ventana de cambios en tours
         this.mod_tour.setVisible(true);
         this.main_panel.setVisible(false);
+        //Dolar Change Value
+        
         //TOUR1
-        this.Price1_MX1.setText(Float.toString(tourAr.get(0).precioAdultoMX));
-        this.Price1_MX2.setText(Float.toString(tourAr.get(0).precioNinoMX));
-        this.Price1_MX3.setText(Float.toString(tourAr.get(0).precioInfanteMX));
         this.Price1_US1.setText(Float.toString(tourAr.get(0).precioAdultoUS));
         this.Price1_US2.setText(Float.toString(tourAr.get(0).precioNinoUS));
-        this.Price1_US3.setText(Float.toString(tourAr.get(0).precioInfanteUS));
         this.Cap1.setText(String.valueOf(tourAr.get(0).capacidad));
         this.tourName1.setText(tourAr.get(0).nombre);
-        this.Hora1_1.setText(tourAr.get(0).hora1);
-        this.Hora1_2.setText(tourAr.get(0).hora2);
-        this.Hora1_3.setText(tourAr.get(0).hora3);
+        this.Hora1_1.setText(tourAr.get(0).hora1.substring(0,5));
+        this.Hora1_2.setText(tourAr.get(0).hora2.substring(0,5));
+        this.Hora1_3.setText(tourAr.get(0).hora3.substring(0,5));
         //TOUR2
-        this.Price2_MX1.setText(Float.toString(tourAr.get(1).precioAdultoMX));
-        this.Price2_MX2.setText(Float.toString(tourAr.get(1).precioNinoMX));
-        this.Price2_MX3.setText(Float.toString(tourAr.get(1).precioInfanteMX));
         this.Price2_US1.setText(Float.toString(tourAr.get(1).precioAdultoUS));
         this.Price2_US2.setText(Float.toString(tourAr.get(1).precioNinoUS));
-        this.Price2_US3.setText(Float.toString(tourAr.get(1).precioInfanteUS));
         this.Cap2.setText(String.valueOf(tourAr.get(1).capacidad));
         this.tourName2.setText(tourAr.get(1).nombre);
-         this.Hora2_1.setText(tourAr.get(1).hora1);
-        this.Hora2_2.setText(tourAr.get(1).hora2);
-        this.Hora2_3.setText(tourAr.get(1).hora3);
+         this.Hora2_1.setText(tourAr.get(1).hora1.substring(0,5));
+        this.Hora2_2.setText(tourAr.get(1).hora2.substring(0,5));
+        this.Hora2_3.setText(tourAr.get(1).hora3.substring(0,5));
         //TOUR3
-        this.Price3_MX1.setText(Float.toString(tourAr.get(2).precioAdultoMX));
-        this.Price3_MX2.setText(Float.toString(tourAr.get(2).precioNinoMX));
-        this.Price3_MX3.setText(Float.toString(tourAr.get(2).precioInfanteMX));
         this.Price3_US1.setText(Float.toString(tourAr.get(2).precioAdultoUS));
         this.Price3_US2.setText(Float.toString(tourAr.get(2).precioNinoUS));
-        this.Price3_US3.setText(Float.toString(tourAr.get(2).precioInfanteUS));
         this.Cap3.setText(String.valueOf(tourAr.get(2).capacidad));
         this.tourName3.setText(tourAr.get(2).nombre);
-         this.Hora3_1.setText(tourAr.get(2).hora1);
-        this.Hora3_2.setText(tourAr.get(2).hora2);
-        this.Hora3_3.setText(tourAr.get(2).hora3);
+         this.Hora3_1.setText(tourAr.get(2).hora1.substring(0,5));
+        this.Hora3_2.setText(tourAr.get(2).hora2.substring(0,5));
+        this.Hora3_3.setText(tourAr.get(2).hora3.substring(0,5));
     }//GEN-LAST:event_ModificarTourActionPerformed
 
     private void UpdateTour1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTour1ActionPerformed
         // TODO add your handling code here:
-        this.conn.updateTour(Float.parseFloat(Price1_MX1.getText()), Float.parseFloat(Price1_MX2.getText()),Float.parseFloat( Price1_MX3.getText()),Float.parseFloat( Price1_US1.getText()),Float.parseFloat( Price1_US2.getText()),Float.parseFloat( Price1_US3.getText()), Integer.parseInt(Cap1.getText()),Hora1_1.getText(),Hora1_2.getText(),Hora1_3.getText(), 1);
+        this.conn.updateTour(Float.parseFloat(Price1_US1.getText()),Float.parseFloat( Price1_US2.getText()), Integer.parseInt(Cap1.getText()),Hora1_1.getText()+":00",Hora1_2.getText()+":00",Hora1_3.getText()+":00", 1);
     }//GEN-LAST:event_UpdateTour1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -574,12 +852,12 @@ public class Admin extends javax.swing.JFrame {
 
     private void UpdateTour2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTour2ActionPerformed
         // TODO add your handling code here:
-        this.conn.updateTour(Float.parseFloat(Price2_MX1.getText()), Float.parseFloat(Price2_MX2.getText()),Float.parseFloat( Price2_MX3.getText()),Float.parseFloat( Price2_US1.getText()),Float.parseFloat( Price2_US2.getText()),Float.parseFloat( Price2_US3.getText()), Integer.parseInt(Cap2.getText()),Hora2_1.getText(),Hora2_2.getText(),Hora2_3.getText(), 2);
+        this.conn.updateTour(Float.parseFloat(Price2_US1.getText()),Float.parseFloat( Price2_US2.getText()), Integer.parseInt(Cap2.getText()),Hora2_1.getText()+":00",Hora2_2.getText()+":00",Hora2_3.getText()+":00", 2);
     }//GEN-LAST:event_UpdateTour2ActionPerformed
 
     private void UpdateTour3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTour3ActionPerformed
         // TODO add your handling code here:
-        this.conn.updateTour(Float.parseFloat(Price3_MX1.getText()), Float.parseFloat(Price3_MX2.getText()),Float.parseFloat( Price3_MX3.getText()),Float.parseFloat( Price3_US1.getText()),Float.parseFloat( Price3_US2.getText()),Float.parseFloat( Price3_US3.getText()), Integer.parseInt(Cap3.getText()),Hora3_1.getText(),Hora3_2.getText(),Hora3_3.getText(), 3);
+        this.conn.updateTour(Float.parseFloat(Price3_US1.getText()),Float.parseFloat( Price3_US2.getText()), Integer.parseInt(Cap3.getText()),Hora3_1.getText()+":00",Hora3_2.getText()+":00",Hora3_3.getText()+":00", 3);
     }//GEN-LAST:event_UpdateTour3ActionPerformed
 
     private void AdminVendedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminVendedoresActionPerformed
@@ -612,22 +890,171 @@ public class Admin extends javax.swing.JFrame {
 
         this.inc_tours.setVisible(true);
         this.main_panel.setVisible(false);
+        this.clientFecha.setVisible(false);
         //SE LLENA LA TABLA DE TOURS
         DefaultTableModel dfm2= new DefaultTableModel();
         tabla = this.tour_table;
         tabla.setModel(dfm2);
-        dfm2.setColumnIdentifiers(new Object[]{"Tour","Fecha","Horario","Asistentes"});
+        dfm2.setColumnIdentifiers(new Object[]{"TourID","Tour","Fecha","Horario","Asistentes"});
         rs2 = this.conn.incTours();
         String hora;
         try { 
             while (rs2.next()){
                 hora = conn.gethour(rs2.getInt("horario"),rs2.getInt("idtour"));
-                dfm2.addRow(new Object[]{rs2.getString("nombre"),rs2.getDate("fecha"),hora,rs2.getInt("turistas")});
+                dfm2.addRow(new Object[]{rs2.getInt("idFechatour"),rs2.getString("nombre"),rs2.getDate("fecha"),hora,rs2.getInt("turistas")});
             }
         }catch(Exception e){
             
         }  
     }//GEN-LAST:event_MostrarToursActionPerformed
+
+    private void Delete_VendorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_VendorActionPerformed
+        // TODO add your handling code here:
+        this.conn.DeleteVendor(Integer.parseInt(this.input_deleteVendId.getText()));
+        DefaultTableModel dfm= new DefaultTableModel();
+        tabla = this.tablaLogIn;
+        tabla.setModel(dfm);
+        dfm.setColumnIdentifiers(new Object[]{"User#","UserName","Password","AccesLevel"});
+        rs = this.conn.logInUsers();
+        String nivel="";
+        try { 
+            while (rs.next()){
+                if(rs.getBoolean("nivel")){
+                    nivel="Administrador";
+                }
+                else{
+                    nivel="Vendedor";
+                }
+                dfm.addRow(new Object[]{rs.getInt("idLogIn"),rs.getString("user"),rs.getString("password"),nivel});
+            }
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_Delete_VendorActionPerformed
+
+    private void ModificarPromCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarPromCodeActionPerformed
+        // TODO add your handling code here:
+        //Abre ventana de promociones
+        this.promCodeWin.setVisible(true);
+        this.main_panel.setVisible(false);
+        //Se pone por defecto la promocion1
+        this.codigo.setText(this.conn.getPromotionCode(1));
+        this.descuento.setText(this.conn.getPromotionDiscount(1).substring(0,2));
+    }//GEN-LAST:event_ModificarPromCodeActionPerformed
+
+    private void ModificarExtraChargeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarExtraChargeActionPerformed
+        // TODO add your handling code here:
+        //MODIFICAR CARGOS EXTRA
+        this.ExtraWin.setVisible(true);
+        this.main_panel.setVisible(false);
+        this.txtextra1.setText(this.conn.getExtraDesc(1));
+        this.input_extra1.setText(this.conn.getExtraVal(1));
+         this.txtextra2.setText(this.conn.getExtraDesc(2));
+        this.input_extra2.setText(this.conn.getExtraVal(2));
+    }//GEN-LAST:event_ModificarExtraChargeActionPerformed
+
+    private void modDolValActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modDolValActionPerformed
+        // TODO add your handling code here:
+        this.conn.changeDolVal(Float.parseFloat(this.changeVal.getText()));
+    }//GEN-LAST:event_modDolValActionPerformed
+
+    private void toggleProm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleProm1ActionPerformed
+        // TODO add your handling code here:
+        //Se pone  la promocion1
+        this.toggleProm2.setSelected(false);
+        this.toggleProm3.setSelected(false);
+        this.toggleProm4.setSelected(false);
+        this.toggleProm5.setSelected(false);
+        this.codigo.setText(this.conn.getPromotionCode(1));
+        String desc = this.conn.getPromotionDiscount(1);
+        this.descuento.setText(desc.substring(0,2));
+    }//GEN-LAST:event_toggleProm1ActionPerformed
+
+    private void toggleProm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleProm2ActionPerformed
+        // TODO add your handling code here:
+        this.toggleProm1.setSelected(false);
+        this.toggleProm3.setSelected(false);
+        this.toggleProm4.setSelected(false);
+        this.toggleProm5.setSelected(false);
+        this.codigo.setText(this.conn.getPromotionCode(2));
+        String desc = this.conn.getPromotionDiscount(2);
+        this.descuento.setText(desc.substring(0,2));
+    }//GEN-LAST:event_toggleProm2ActionPerformed
+
+    private void toggleProm3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleProm3ActionPerformed
+        // TODO add your handling code here:
+        this.toggleProm2.setSelected(false);
+        this.toggleProm1.setSelected(false);
+        this.toggleProm4.setSelected(false);
+        this.toggleProm5.setSelected(false);
+        this.codigo.setText(this.conn.getPromotionCode(3));
+        String desc = this.conn.getPromotionDiscount(3);
+        this.descuento.setText(desc.substring(0,2));
+    }//GEN-LAST:event_toggleProm3ActionPerformed
+
+    private void toggleProm4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleProm4ActionPerformed
+        // TODO add your handling code here:
+        this.toggleProm2.setSelected(false);
+        this.toggleProm3.setSelected(false);
+        this.toggleProm1.setSelected(false);
+        this.toggleProm5.setSelected(false);
+        this.codigo.setText(this.conn.getPromotionCode(4));
+        String desc = this.conn.getPromotionDiscount(4);
+        this.descuento.setText(desc.substring(0,2));
+    }//GEN-LAST:event_toggleProm4ActionPerformed
+
+    private void toggleProm5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleProm5ActionPerformed
+        // TODO add your handling code here:
+        this.toggleProm2.setSelected(false);
+        this.toggleProm3.setSelected(false);
+        this.toggleProm4.setSelected(false);
+        this.toggleProm1.setSelected(false);
+        this.codigo.setText(this.conn.getPromotionCode(5));
+        String desc = this.conn.getPromotionDiscount(5);
+        this.descuento.setText(desc.substring(0,2));
+    }//GEN-LAST:event_toggleProm5ActionPerformed
+
+    private void update_promoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_promoActionPerformed
+        // TODO add your handling code here:
+        //VER CUAL PROM SE UPDATEA SEGUN LOS TOGGLES
+        int promid=1;
+        if (this.toggleProm1.isSelected())
+            promid=1;
+        else if(this.toggleProm2.isSelected())
+            promid=2;
+        else if(this.toggleProm3.isSelected())
+            promid=3;
+        else if(this.toggleProm4.isSelected())
+            promid=4;
+        else if(this.toggleProm5.isSelected())
+            promid=5;
+        
+        this.conn.changePromVal(Float.parseFloat(this.descuento.getText())/100, this.codigo.getText(), promid);
+    }//GEN-LAST:event_update_promoActionPerformed
+
+    private void btn_UpdateExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_UpdateExtraActionPerformed
+        // TODO add your handling code here:
+        this.conn.changeExtra1Val(Float.parseFloat(this.input_extra1.getText()));
+        this.conn.changeExtra2Val(Float.parseFloat(this.input_extra2.getText()));
+    }//GEN-LAST:event_btn_UpdateExtraActionPerformed
+
+    private void client_listActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_listActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel dfm= new DefaultTableModel();
+        tabla = this.clientFecha;
+        tabla.setModel(dfm);
+        dfm.setColumnIdentifiers(new Object[]{"Client#","Responsable","Correo","Telefono","Extra1","Extra2","Adultos","Niños","Infantes","PagoTotal",});
+        rs = this.conn.clientesfecha(Integer.parseInt(this.fechaTourID.  getText()));
+        String nivel="";
+        try { 
+            while (rs.next()){
+                this.clientFecha.setVisible(true);
+                dfm.addRow(new Object[]{rs.getInt("idCliente"),rs.getString("nombre")+" "+rs.getString("apellido"),rs.getString("correo"),rs.getString("telefono"),rs.getInt("cantExtra1"),rs.getInt("cantExtra2"),rs.getInt("cantAdultos"),rs.getInt("cantNino"),rs.getInt("cantInfantes"),rs.getInt("precioTotal")+" "+rs.getString("moneda")});
+            }
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_client_listActionPerformed
 
     /**
      * @param args the command line arguments
@@ -670,6 +1097,8 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JTextField Cap1;
     private javax.swing.JTextField Cap2;
     private javax.swing.JTextField Cap3;
+    private javax.swing.JButton Delete_Vendor;
+    private javax.swing.JPanel ExtraWin;
     private javax.swing.JTextField Hora1_1;
     private javax.swing.JTextField Hora1_2;
     private javax.swing.JTextField Hora1_3;
@@ -679,35 +1108,43 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JTextField Hora3_1;
     private javax.swing.JTextField Hora3_2;
     private javax.swing.JTextField Hora3_3;
+    private javax.swing.JButton ModificarExtraCharge;
+    private javax.swing.JButton ModificarPromCode;
     private javax.swing.JButton ModificarTour;
     private javax.swing.JButton MostrarTours;
-    private javax.swing.JTextField Price1_MX1;
-    private javax.swing.JTextField Price1_MX2;
-    private javax.swing.JTextField Price1_MX3;
     private javax.swing.JTextField Price1_US1;
     private javax.swing.JTextField Price1_US2;
-    private javax.swing.JTextField Price1_US3;
-    private javax.swing.JTextField Price2_MX1;
-    private javax.swing.JTextField Price2_MX2;
-    private javax.swing.JTextField Price2_MX3;
     private javax.swing.JTextField Price2_US1;
     private javax.swing.JTextField Price2_US2;
-    private javax.swing.JTextField Price2_US3;
-    private javax.swing.JTextField Price3_MX1;
-    private javax.swing.JTextField Price3_MX2;
-    private javax.swing.JTextField Price3_MX3;
     private javax.swing.JTextField Price3_US1;
     private javax.swing.JTextField Price3_US2;
-    private javax.swing.JTextField Price3_US3;
+    private javax.swing.JLabel TxtUsre;
     private javax.swing.JButton UpdateTour1;
     private javax.swing.JButton UpdateTour2;
     private javax.swing.JButton UpdateTour3;
     private javax.swing.JPanel admin_ven;
+    private javax.swing.JButton btn_UpdateExtra;
+    private javax.swing.JTextField changeVal;
+    private javax.swing.JTable clientFecha;
+    private javax.swing.JButton client_list;
+    private javax.swing.JTextField codigo;
+    private javax.swing.JTextField descuento;
+    private javax.swing.JTextField fechaTourID;
     private javax.swing.JPanel inc_tours;
+    private javax.swing.JTextField input_deleteVendId;
+    private javax.swing.JTextField input_extra1;
+    private javax.swing.JTextField input_extra2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -715,13 +1152,25 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPanel main_panel;
+    private javax.swing.JButton modDolVal;
     private javax.swing.JPanel mod_tour;
+    private javax.swing.JPanel promCodeWin;
     private javax.swing.JTable tablaLogIn;
+    private javax.swing.JToggleButton toggleProm1;
+    private javax.swing.JToggleButton toggleProm2;
+    private javax.swing.JToggleButton toggleProm3;
+    private javax.swing.JToggleButton toggleProm4;
+    private javax.swing.JToggleButton toggleProm5;
     private javax.swing.JLabel tourName1;
     private javax.swing.JLabel tourName2;
     private javax.swing.JLabel tourName3;
     private javax.swing.JTable tour_table;
+    private javax.swing.JLabel txtVendElimin;
+    private javax.swing.JLabel txtextra1;
+    private javax.swing.JLabel txtextra2;
+    private javax.swing.JButton update_promo;
     // End of variables declaration//GEN-END:variables
 }
