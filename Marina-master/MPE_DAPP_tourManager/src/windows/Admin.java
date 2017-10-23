@@ -40,6 +40,7 @@ public class Admin extends javax.swing.JFrame {
         this.changeVal.setText(this.conn.getDolVal());
         this.promCodeWin.setVisible(false);
         this.ExtraWin.setVisible(false);
+        tourAr=this.conn.getTours();
     }
 
     /**
@@ -60,6 +61,41 @@ public class Admin extends javax.swing.JFrame {
         modDolVal = new javax.swing.JButton();
         changeVal = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        ExtraWin = new javax.swing.JPanel();
+        txtextra1 = new javax.swing.JLabel();
+        txtextra2 = new javax.swing.JLabel();
+        input_extra1 = new javax.swing.JTextField();
+        input_extra2 = new javax.swing.JTextField();
+        btn_UpdateExtra = new javax.swing.JButton();
+        admin_ven = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaLogIn = new javax.swing.JTable();
+        txtVendElimin = new javax.swing.JLabel();
+        input_deleteVendId = new javax.swing.JTextField();
+        TxtUsre = new javax.swing.JLabel();
+        Delete_Vendor = new javax.swing.JButton();
+        promCodeWin = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        codigo = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        descuento = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        toggleProm1 = new javax.swing.JToggleButton();
+        toggleProm2 = new javax.swing.JToggleButton();
+        toggleProm3 = new javax.swing.JToggleButton();
+        toggleProm4 = new javax.swing.JToggleButton();
+        toggleProm5 = new javax.swing.JToggleButton();
+        update_promo = new javax.swing.JButton();
+        inc_tours = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tour_table = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        client_list = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        fechaTourID = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        clientFecha = new javax.swing.JTable();
         mod_tour = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -95,41 +131,6 @@ public class Admin extends javax.swing.JFrame {
         Hora3_1 = new javax.swing.JTextField();
         Hora3_2 = new javax.swing.JTextField();
         Hora3_3 = new javax.swing.JTextField();
-        inc_tours = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tour_table = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        client_list = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        fechaTourID = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        clientFecha = new javax.swing.JTable();
-        promCodeWin = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        codigo = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        descuento = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        toggleProm1 = new javax.swing.JToggleButton();
-        toggleProm2 = new javax.swing.JToggleButton();
-        toggleProm3 = new javax.swing.JToggleButton();
-        toggleProm4 = new javax.swing.JToggleButton();
-        toggleProm5 = new javax.swing.JToggleButton();
-        update_promo = new javax.swing.JButton();
-        admin_ven = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaLogIn = new javax.swing.JTable();
-        txtVendElimin = new javax.swing.JLabel();
-        input_deleteVendId = new javax.swing.JTextField();
-        TxtUsre = new javax.swing.JLabel();
-        Delete_Vendor = new javax.swing.JButton();
-        ExtraWin = new javax.swing.JPanel();
-        txtextra1 = new javax.swing.JLabel();
-        txtextra2 = new javax.swing.JLabel();
-        input_extra1 = new javax.swing.JTextField();
-        input_extra2 = new javax.swing.JTextField();
-        btn_UpdateExtra = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -229,6 +230,332 @@ public class Admin extends javax.swing.JFrame {
         );
 
         getContentPane().add(main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
+
+        ExtraWin.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtextra1.setText("EXTRA");
+
+        txtextra2.setText("EXTRA");
+
+        btn_UpdateExtra.setText("UPDATE");
+        btn_UpdateExtra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_UpdateExtraActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ExtraWinLayout = new javax.swing.GroupLayout(ExtraWin);
+        ExtraWin.setLayout(ExtraWinLayout);
+        ExtraWinLayout.setHorizontalGroup(
+            ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ExtraWinLayout.createSequentialGroup()
+                .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ExtraWinLayout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(ExtraWinLayout.createSequentialGroup()
+                                .addComponent(txtextra2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(input_extra2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(ExtraWinLayout.createSequentialGroup()
+                                .addComponent(txtextra1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(input_extra1))))
+                    .addGroup(ExtraWinLayout.createSequentialGroup()
+                        .addGap(337, 337, 337)
+                        .addComponent(btn_UpdateExtra)))
+                .addContainerGap(892, Short.MAX_VALUE))
+        );
+        ExtraWinLayout.setVerticalGroup(
+            ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ExtraWinLayout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtextra1)
+                    .addComponent(input_extra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(btn_UpdateExtra)
+                .addGap(19, 19, 19)
+                .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtextra2)
+                    .addComponent(input_extra2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(442, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(ExtraWin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
+
+        admin_ven.setBackground(new java.awt.Color(255, 255, 255));
+
+        tablaLogIn.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        tablaLogIn.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"", null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "User#", "UserID", "Password", "Level"
+            }
+        ));
+        tablaLogIn.setEnabled(false);
+        jScrollPane1.setViewportView(tablaLogIn);
+
+        txtVendElimin.setText("Eliminar a un vendedor");
+
+        TxtUsre.setText("User# :");
+
+        Delete_Vendor.setText("Eliminar");
+        Delete_Vendor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Delete_VendorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout admin_venLayout = new javax.swing.GroupLayout(admin_ven);
+        admin_ven.setLayout(admin_venLayout);
+        admin_venLayout.setHorizontalGroup(
+            admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(admin_venLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(admin_venLayout.createSequentialGroup()
+                        .addGap(209, 209, 209)
+                        .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtVendElimin, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(admin_venLayout.createSequentialGroup()
+                                .addComponent(TxtUsre)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(input_deleteVendId, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(admin_venLayout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(Delete_Vendor)))
+                .addContainerGap(227, Short.MAX_VALUE))
+        );
+        admin_venLayout.setVerticalGroup(
+            admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(admin_venLayout.createSequentialGroup()
+                .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(admin_venLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(admin_venLayout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(txtVendElimin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(input_deleteVendId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtUsre))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Delete_Vendor)))
+                .addContainerGap(482, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(admin_ven, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
+
+        promCodeWin.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel13.setText("PROMOCION");
+
+        jLabel14.setText("CODIGO:");
+
+        jLabel15.setText("DESCUENTO:");
+
+        jLabel16.setText("%");
+
+        toggleProm1.setText("1");
+        toggleProm1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleProm1ActionPerformed(evt);
+            }
+        });
+
+        toggleProm2.setText("2");
+        toggleProm2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleProm2ActionPerformed(evt);
+            }
+        });
+
+        toggleProm3.setText("3");
+        toggleProm3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleProm3ActionPerformed(evt);
+            }
+        });
+
+        toggleProm4.setText("4");
+        toggleProm4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleProm4ActionPerformed(evt);
+            }
+        });
+
+        toggleProm5.setText("5");
+        toggleProm5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleProm5ActionPerformed(evt);
+            }
+        });
+
+        update_promo.setText("Update");
+        update_promo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_promoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout promCodeWinLayout = new javax.swing.GroupLayout(promCodeWin);
+        promCodeWin.setLayout(promCodeWinLayout);
+        promCodeWinLayout.setHorizontalGroup(
+            promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(promCodeWinLayout.createSequentialGroup()
+                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(promCodeWinLayout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(toggleProm1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(toggleProm2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(toggleProm3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(toggleProm4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(toggleProm5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(promCodeWinLayout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(promCodeWinLayout.createSequentialGroup()
+                                .addComponent(descuento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel16))))
+                    .addGroup(promCodeWinLayout.createSequentialGroup()
+                        .addGap(193, 193, 193)
+                        .addComponent(update_promo)))
+                .addContainerGap(912, Short.MAX_VALUE))
+        );
+        promCodeWinLayout.setVerticalGroup(
+            promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(promCodeWinLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(toggleProm1)
+                    .addComponent(toggleProm2)
+                    .addComponent(toggleProm3)
+                    .addComponent(toggleProm4)
+                    .addComponent(toggleProm5))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel13)
+                .addGap(23, 23, 23)
+                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGap(18, 18, 18)
+                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(descuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(18, 18, 18)
+                .addComponent(update_promo)
+                .addContainerGap(441, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(promCodeWin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
+
+        inc_tours.setBackground(new java.awt.Color(255, 255, 255));
+
+        tour_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(tour_table);
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel1.setText("Proximos Tours");
+
+        client_list.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        client_list.setText("Ver");
+        client_list.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                client_listActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("TOUR ID");
+
+        fechaTourID.setText("ID");
+
+        clientFecha.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(clientFecha);
+
+        javax.swing.GroupLayout inc_toursLayout = new javax.swing.GroupLayout(inc_tours);
+        inc_tours.setLayout(inc_toursLayout);
+        inc_toursLayout.setHorizontalGroup(
+            inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inc_toursLayout.createSequentialGroup()
+                .addGap(302, 302, 302)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inc_toursLayout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addGroup(inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inc_toursLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(369, 369, 369)
+                        .addGroup(inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(fechaTourID)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(client_list, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
+        );
+        inc_toursLayout.setVerticalGroup(
+            inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inc_toursLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(jLabel1)
+                .addGroup(inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inc_toursLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fechaTourID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(client_list))
+                    .addGroup(inc_toursLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89))
+        );
+
+        getContentPane().add(inc_tours, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
 
         mod_tour.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -476,338 +803,12 @@ public class Admin extends javax.swing.JFrame {
 
         getContentPane().add(mod_tour, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 650));
 
-        inc_tours.setBackground(new java.awt.Color(255, 255, 255));
-
-        tour_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(tour_table);
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setText("Proximos Tours");
-
-        client_list.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        client_list.setText("Ver");
-        client_list.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_listActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("TOUR ID");
-
-        fechaTourID.setText("ID");
-
-        clientFecha.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(clientFecha);
-
-        javax.swing.GroupLayout inc_toursLayout = new javax.swing.GroupLayout(inc_tours);
-        inc_tours.setLayout(inc_toursLayout);
-        inc_toursLayout.setHorizontalGroup(
-            inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inc_toursLayout.createSequentialGroup()
-                .addGap(302, 302, 302)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inc_toursLayout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
-                .addGroup(inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(inc_toursLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(369, 369, 369)
-                        .addGroup(inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fechaTourID)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(client_list, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18))
-        );
-        inc_toursLayout.setVerticalGroup(
-            inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inc_toursLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLabel1)
-                .addGroup(inc_toursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(inc_toursLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fechaTourID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(client_list))
-                    .addGroup(inc_toursLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89))
-        );
-
-        getContentPane().add(inc_tours, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
-
-        promCodeWin.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel13.setText("PROMOCION");
-
-        jLabel14.setText("CODIGO:");
-
-        jLabel15.setText("DESCUENTO:");
-
-        jLabel16.setText("%");
-
-        toggleProm1.setText("1");
-        toggleProm1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toggleProm1ActionPerformed(evt);
-            }
-        });
-
-        toggleProm2.setText("2");
-        toggleProm2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toggleProm2ActionPerformed(evt);
-            }
-        });
-
-        toggleProm3.setText("3");
-        toggleProm3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toggleProm3ActionPerformed(evt);
-            }
-        });
-
-        toggleProm4.setText("4");
-        toggleProm4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toggleProm4ActionPerformed(evt);
-            }
-        });
-
-        toggleProm5.setText("5");
-        toggleProm5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toggleProm5ActionPerformed(evt);
-            }
-        });
-
-        update_promo.setText("Update");
-        update_promo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                update_promoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout promCodeWinLayout = new javax.swing.GroupLayout(promCodeWin);
-        promCodeWin.setLayout(promCodeWinLayout);
-        promCodeWinLayout.setHorizontalGroup(
-            promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(promCodeWinLayout.createSequentialGroup()
-                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(promCodeWinLayout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(toggleProm1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(toggleProm2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(toggleProm3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(toggleProm4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(toggleProm5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(promCodeWinLayout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(promCodeWinLayout.createSequentialGroup()
-                                .addComponent(descuento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel16))))
-                    .addGroup(promCodeWinLayout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(update_promo)))
-                .addContainerGap(912, Short.MAX_VALUE))
-        );
-        promCodeWinLayout.setVerticalGroup(
-            promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(promCodeWinLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(toggleProm1)
-                    .addComponent(toggleProm2)
-                    .addComponent(toggleProm3)
-                    .addComponent(toggleProm4)
-                    .addComponent(toggleProm5))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel13)
-                .addGap(23, 23, 23)
-                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addGap(18, 18, 18)
-                .addGroup(promCodeWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(descuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
-                .addGap(18, 18, 18)
-                .addComponent(update_promo)
-                .addContainerGap(441, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(promCodeWin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
-
-        admin_ven.setBackground(new java.awt.Color(255, 255, 255));
-
-        tablaLogIn.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        tablaLogIn.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"", null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "User#", "UserID", "Password", "Level"
-            }
-        ));
-        tablaLogIn.setEnabled(false);
-        jScrollPane1.setViewportView(tablaLogIn);
-
-        txtVendElimin.setText("Eliminar a un vendedor");
-
-        TxtUsre.setText("User# :");
-
-        Delete_Vendor.setText("Eliminar");
-        Delete_Vendor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Delete_VendorActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout admin_venLayout = new javax.swing.GroupLayout(admin_ven);
-        admin_ven.setLayout(admin_venLayout);
-        admin_venLayout.setHorizontalGroup(
-            admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(admin_venLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(admin_venLayout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtVendElimin, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(admin_venLayout.createSequentialGroup()
-                                .addComponent(TxtUsre)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(input_deleteVendId, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(admin_venLayout.createSequentialGroup()
-                        .addGap(235, 235, 235)
-                        .addComponent(Delete_Vendor)))
-                .addContainerGap(227, Short.MAX_VALUE))
-        );
-        admin_venLayout.setVerticalGroup(
-            admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(admin_venLayout.createSequentialGroup()
-                .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(admin_venLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(admin_venLayout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(txtVendElimin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(admin_venLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(input_deleteVendId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtUsre))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Delete_Vendor)))
-                .addContainerGap(482, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(admin_ven, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
-
-        ExtraWin.setBackground(new java.awt.Color(255, 255, 255));
-
-        txtextra1.setText("EXTRA");
-
-        txtextra2.setText("EXTRA");
-
-        btn_UpdateExtra.setText("UPDATE");
-        btn_UpdateExtra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_UpdateExtraActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout ExtraWinLayout = new javax.swing.GroupLayout(ExtraWin);
-        ExtraWin.setLayout(ExtraWinLayout);
-        ExtraWinLayout.setHorizontalGroup(
-            ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ExtraWinLayout.createSequentialGroup()
-                .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ExtraWinLayout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(ExtraWinLayout.createSequentialGroup()
-                                .addComponent(txtextra2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(input_extra2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ExtraWinLayout.createSequentialGroup()
-                                .addComponent(txtextra1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(input_extra1))))
-                    .addGroup(ExtraWinLayout.createSequentialGroup()
-                        .addGap(337, 337, 337)
-                        .addComponent(btn_UpdateExtra)))
-                .addContainerGap(892, Short.MAX_VALUE))
-        );
-        ExtraWinLayout.setVerticalGroup(
-            ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ExtraWinLayout.createSequentialGroup()
-                .addGap(118, 118, 118)
-                .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtextra1)
-                    .addComponent(input_extra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(btn_UpdateExtra)
-                .addGap(19, 19, 19)
-                .addGroup(ExtraWinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtextra2)
-                    .addComponent(input_extra2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(442, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(ExtraWin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -25, 1300, 670));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void ModificarTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarTourActionPerformed
         // TODO add your handling code here:
-        tourAr=this.conn.getTours();
+        
         //Abre ventana de cambios en tours
         this.mod_tour.setVisible(true);
         this.main_panel.setVisible(false);
@@ -841,7 +842,9 @@ public class Admin extends javax.swing.JFrame {
 
     private void UpdateTour1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTour1ActionPerformed
         // TODO add your handling code here:
+       
         this.conn.updateTour(Float.parseFloat(Price1_US1.getText()),Float.parseFloat( Price1_US2.getText()), Integer.parseInt(Cap1.getText()),Hora1_1.getText()+":00",Hora1_2.getText()+":00",Hora1_3.getText()+":00", 1);
+        tourAr=this.conn.getTours();
     }//GEN-LAST:event_UpdateTour1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -853,11 +856,13 @@ public class Admin extends javax.swing.JFrame {
     private void UpdateTour2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTour2ActionPerformed
         // TODO add your handling code here:
         this.conn.updateTour(Float.parseFloat(Price2_US1.getText()),Float.parseFloat( Price2_US2.getText()), Integer.parseInt(Cap2.getText()),Hora2_1.getText()+":00",Hora2_2.getText()+":00",Hora2_3.getText()+":00", 2);
+        tourAr=this.conn.getTours();
     }//GEN-LAST:event_UpdateTour2ActionPerformed
 
     private void UpdateTour3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTour3ActionPerformed
         // TODO add your handling code here:
         this.conn.updateTour(Float.parseFloat(Price3_US1.getText()),Float.parseFloat( Price3_US2.getText()), Integer.parseInt(Cap3.getText()),Hora3_1.getText()+":00",Hora3_2.getText()+":00",Hora3_3.getText()+":00", 3);
+        tourAr=this.conn.getTours();
     }//GEN-LAST:event_UpdateTour3ActionPerformed
 
     private void AdminVendedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminVendedoresActionPerformed

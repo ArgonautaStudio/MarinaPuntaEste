@@ -17,11 +17,7 @@ public class Cancelaciones extends javax.swing.JFrame {
      * Creates new form Cancelaciones
      */
     public Cancelaciones() {
-        initComponents();  
-        input_nombre.setOpaque(false);
-        input_apellido.setOpaque(false); 
-        input_email.setOpaque(false); 
-        input_cel.setOpaque(false);
+        initComponents(); 
     }
 
     /**
@@ -36,25 +32,21 @@ public class Cancelaciones extends javax.swing.JFrame {
         panel_cancelaciones = new javax.swing.JPanel();
         NoCuenta = new javax.swing.JPanel();
         title_cancelacionNo = new javax.swing.JLabel();
-        cancelacion_name = new javax.swing.JLabel();
+        cancelacion_correo = new javax.swing.JLabel();
         input_nombre = new javax.swing.JTextField();
         input_apellido = new javax.swing.JTextField();
         cancelacion_apellido = new javax.swing.JLabel();
         separador_apellido = new javax.swing.JSeparator();
-        input_email = new javax.swing.JTextField();
-        cancelacion_email = new javax.swing.JLabel();
-        separador_email = new javax.swing.JSeparator();
-        cancelacion_cel = new javax.swing.JLabel();
-        input_cel = new javax.swing.JTextField();
-        separador_cel = new javax.swing.JSeparator();
-        btn_buscar_noOrden = new javax.swing.JButton();
         separador_nombre2 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         NoOrden = new javax.swing.JPanel();
         cancelacion_noOrden = new javax.swing.JLabel();
         title_numero = new javax.swing.JLabel();
         input_numero = new javax.swing.JTextField();
         separador_numero = new javax.swing.JSeparator();
-        btn_buscar_noOrden1 = new javax.swing.JButton();
         Resumen = new javax.swing.JPanel();
         title_cancelacionNo2 = new javax.swing.JLabel();
         title_cancelacion_nombre = new javax.swing.JLabel();
@@ -92,10 +84,10 @@ public class Cancelaciones extends javax.swing.JFrame {
         title_cancelacionNo.setText("No cuenta con numero de orden");
         NoCuenta.add(title_cancelacionNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
 
-        cancelacion_name.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        cancelacion_name.setForeground(new java.awt.Color(153, 153, 153));
-        cancelacion_name.setText("Nombre:");
-        NoCuenta.add(cancelacion_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 80, -1));
+        cancelacion_correo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        cancelacion_correo.setForeground(new java.awt.Color(153, 153, 153));
+        cancelacion_correo.setText("Email:");
+        NoCuenta.add(cancelacion_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 80, -1));
 
         input_nombre.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
         input_nombre.setForeground(new java.awt.Color(153, 153, 153));
@@ -121,61 +113,25 @@ public class Cancelaciones extends javax.swing.JFrame {
 
         cancelacion_apellido.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         cancelacion_apellido.setForeground(new java.awt.Color(153, 153, 153));
-        cancelacion_apellido.setText("Apellido:");
-        NoCuenta.add(cancelacion_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 80, -1));
+        cancelacion_apellido.setText("Fecha: (año-mes-día)");
+        NoCuenta.add(cancelacion_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 170, -1));
         NoCuenta.add(separador_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 510, 10));
-
-        input_email.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
-        input_email.setForeground(new java.awt.Color(153, 153, 153));
-        input_email.setBorder(null);
-        input_email.setOpaque(false);
-        input_email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_emailActionPerformed(evt);
-            }
-        });
-        NoCuenta.add(input_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 430, 30));
-
-        cancelacion_email.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        cancelacion_email.setForeground(new java.awt.Color(153, 153, 153));
-        cancelacion_email.setText("Email:");
-        NoCuenta.add(cancelacion_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 80, -1));
-        NoCuenta.add(separador_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 510, 10));
-
-        cancelacion_cel.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        cancelacion_cel.setForeground(new java.awt.Color(153, 153, 153));
-        cancelacion_cel.setText("Number:");
-        NoCuenta.add(cancelacion_cel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 80, -1));
-
-        input_cel.setFont(new java.awt.Font("Roboto Lt", 0, 24)); // NOI18N
-        input_cel.setForeground(new java.awt.Color(153, 153, 153));
-        input_cel.setBorder(null);
-        input_cel.setOpaque(false);
-        input_cel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_celActionPerformed(evt);
-            }
-        });
-        NoCuenta.add(input_cel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 430, 30));
-        NoCuenta.add(separador_cel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 510, 10));
-
-        btn_buscar_noOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Buscar_Static_10.png"))); // NOI18N
-        btn_buscar_noOrden.setBorder(null);
-        btn_buscar_noOrden.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_buscar_noOrdenMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_buscar_noOrdenMouseExited(evt);
-            }
-        });
-        btn_buscar_noOrden.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_buscar_noOrdenActionPerformed(evt);
-            }
-        });
-        NoCuenta.add(btn_buscar_noOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, -1, -1));
         NoCuenta.add(separador_nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 510, 10));
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        NoCuenta.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tour", "Tour1", "Tour2", "Tour3" }));
+        NoCuenta.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, -1, -1));
+
+        jFormattedTextField1.setText("jFormattedTextField1");
+        NoCuenta.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, -1));
 
         panel_cancelaciones.add(NoCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 690, 500));
 
@@ -194,22 +150,6 @@ public class Cancelaciones extends javax.swing.JFrame {
         input_numero.setForeground(new java.awt.Color(153, 153, 153));
         input_numero.setBorder(null);
 
-        btn_buscar_noOrden1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Btn_Buscar_Static_10.png"))); // NOI18N
-        btn_buscar_noOrden1.setBorder(null);
-        btn_buscar_noOrden1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_buscar_noOrden1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_buscar_noOrden1MouseExited(evt);
-            }
-        });
-        btn_buscar_noOrden1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_buscar_noOrden1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout NoOrdenLayout = new javax.swing.GroupLayout(NoOrden);
         NoOrden.setLayout(NoOrdenLayout);
         NoOrdenLayout.setHorizontalGroup(
@@ -221,13 +161,11 @@ public class Cancelaciones extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NoOrdenLayout.createSequentialGroup()
                 .addContainerGap(93, Short.MAX_VALUE)
                 .addGroup(NoOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NoOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(NoOrdenLayout.createSequentialGroup()
-                            .addComponent(title_numero)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(input_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(separador_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_buscar_noOrden1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(NoOrdenLayout.createSequentialGroup()
+                        .addComponent(title_numero)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(input_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(separador_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(87, 87, 87))
         );
         NoOrdenLayout.setVerticalGroup(
@@ -244,9 +182,7 @@ public class Cancelaciones extends javax.swing.JFrame {
                         .addComponent(input_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(separador_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addComponent(btn_buscar_noOrden1)
-                        .addGap(21, 21, 21))))
+                        .addGap(21, 110, Short.MAX_VALUE))))
         );
 
         panel_cancelaciones.add(NoOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 260));
@@ -388,7 +324,7 @@ public class Cancelaciones extends javax.swing.JFrame {
                     .addComponent(separador_nombre3, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResumenLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(40, 40, 40)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(ResumenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,20 +368,21 @@ public class Cancelaciones extends javax.swing.JFrame {
                     .addComponent(tour_cancelacion_adult)
                     .addComponent(title_cancelacion_child)
                     .addComponent(tour_cancelacion_child))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
                 .addComponent(separador_nombre3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(ResumenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResumenLayout.createSequentialGroup()
-                        .addGroup(ResumenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(totalPrice)
-                            .addComponent(jButton1))
+                        .addComponent(totalPrice)
                         .addGap(45, 45, 45))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResumenLayout.createSequentialGroup()
                         .addComponent(moneda)
-                        .addGap(56, 56, 56))))
+                        .addGap(56, 56, 56))
+                    .addGroup(ResumenLayout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addContainerGap())))
         );
 
         panel_cancelaciones.add(Resumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 610, 760));
@@ -474,55 +411,17 @@ public class Cancelaciones extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void input_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nombreActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_input_nombreActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void input_apellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_apellidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_input_apellidoActionPerformed
 
-    private void input_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_emailActionPerformed
+    private void input_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_input_emailActionPerformed
-
-    private void input_celActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_celActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_input_celActionPerformed
-
-    private void btn_buscar_noOrdenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_buscar_noOrdenMouseEntered
-        // TODO add your handling code here: 
-        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Buscar_Hover_10.png"));
-        this.btn_buscar_noOrden.setIcon(nepe);
-    }//GEN-LAST:event_btn_buscar_noOrdenMouseEntered
-
-    private void btn_buscar_noOrdenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_buscar_noOrdenMouseExited
-        // TODO add your handling code here: 
-        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Buscar_Static_10.png"));
-        this.btn_buscar_noOrden.setIcon(nepe);
-    }//GEN-LAST:event_btn_buscar_noOrdenMouseExited
-
-    private void btn_buscar_noOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscar_noOrdenActionPerformed
-        // TODO add your handling code here: 
-        ImageIcon nepe = new ImageIcon(getClass().getResource("/img/Btn_Buscar_Active_9.png"));
-        this.btn_buscar_noOrden.setIcon(nepe);
-    }//GEN-LAST:event_btn_buscar_noOrdenActionPerformed
-
-    private void btn_buscar_noOrden1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_buscar_noOrden1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_buscar_noOrden1MouseEntered
-
-    private void btn_buscar_noOrden1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_buscar_noOrden1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_buscar_noOrden1MouseExited
-
-    private void btn_buscar_noOrden1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscar_noOrden1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_buscar_noOrden1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_input_nombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -564,25 +463,21 @@ public class Cancelaciones extends javax.swing.JFrame {
     private javax.swing.JPanel NoCuenta;
     private javax.swing.JPanel NoOrden;
     private javax.swing.JPanel Resumen;
-    private javax.swing.JButton btn_buscar_noOrden;
-    private javax.swing.JButton btn_buscar_noOrden1;
     private javax.swing.JLabel cancelacion_apellido;
-    private javax.swing.JLabel cancelacion_cel;
-    private javax.swing.JLabel cancelacion_email;
-    private javax.swing.JLabel cancelacion_name;
+    private javax.swing.JLabel cancelacion_correo;
     private javax.swing.JLabel cancelacion_noOrden;
     private javax.swing.JTextField input_apellido;
-    private javax.swing.JTextField input_cel;
-    private javax.swing.JTextField input_email;
     private javax.swing.JTextField input_nombre;
     private javax.swing.JTextField input_numero;
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel moneda;
     private javax.swing.JPanel panel_cancelaciones;
     private javax.swing.JSeparator separador_apellido;
-    private javax.swing.JSeparator separador_cel;
-    private javax.swing.JSeparator separador_email;
     private javax.swing.JSeparator separador_nombre1;
     private javax.swing.JSeparator separador_nombre2;
     private javax.swing.JSeparator separador_nombre3;

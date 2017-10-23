@@ -222,7 +222,7 @@ public class Conecction {
 
             while(rs.next())
             {
-               item = new Tour(rs.getInt("idTour"),rs.getString("nombre"),rs.getString("descripcion"),rs.getInt("capacidad"),rs.getString("hora1"),rs.getString("hora2"),rs.getString("hora3"),rs.getFloat("precioAdultoUS")*rs.getFloat("Valor"),rs.getFloat("precioNinoUS")*rs.getFloat("Valor"),rs.getFloat("precioAdultoUS"),rs.getFloat("precioNinoUS"));
+               item = new Tour(rs.getInt("idTour"),rs.getString("nombre"),rs.getString("descripcion"),rs.getInt("capacidad"),rs.getString("hora1"),rs.getString("hora2"),rs.getString("hora3"),Math.round(rs.getFloat("precioAdultoUS")*rs.getFloat("Valor")),Math.round(rs.getFloat("precioNinoUS")*rs.getFloat("Valor")),rs.getFloat("precioAdultoUS"),rs.getFloat("precioNinoUS"));
                list.add(item);
             }
             return list;
